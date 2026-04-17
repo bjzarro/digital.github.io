@@ -270,6 +270,141 @@
 
   body.modal-open { overflow: hidden; }
 
+  /* Theme Toggle — botão sutil no canto */
+  .theme-toggle {
+    position: fixed; top: 6px; right: 6px; z-index: 60;
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(230,237,234,0.55);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .theme-toggle:hover { opacity: 1; background: rgba(255,255,255,0.08); color: #E6EDEA; border-color: rgba(255,255,255,0.18); }
+  .theme-toggle .theme-icon-sun { display: none; }
+  body.theme-light .theme-toggle .theme-icon-sun { display: block; }
+  body.theme-light .theme-toggle .theme-icon-moon { display: none; }
+
+  /* ============ LIGHT THEME ============ */
+  body.theme-light {
+    background: #F5F7F6;
+    color: #0B1511;
+  }
+  body.theme-light h1, body.theme-light h2, body.theme-light h3, body.theme-light h4 { color: #0B1511; }
+
+  body.theme-light .theme-toggle {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.1);
+    color: rgba(11,21,17,0.55);
+  }
+  body.theme-light .theme-toggle:hover { background: rgba(0,0,0,0.06); color: #0B1511; border-color: rgba(0,0,0,0.2); }
+
+  body.theme-light .grid-bg {
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(37,211,102,0.18), transparent 45%),
+      radial-gradient(circle at 80% 60%, rgba(18,140,126,0.12), transparent 50%),
+      linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: auto, auto, 44px 44px, 44px 44px;
+  }
+
+  body.theme-light .gradient-text {
+    background: linear-gradient(90deg, #0FA55B 0%, #25D366 50%, #0B1511 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  body.theme-light .number-big {
+    background: linear-gradient(180deg, #0B1511 0%, #0FA55B 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  body.theme-light .eyebrow { color: #0FA55B; }
+
+  body.theme-light .card {
+    background: #FFFFFF;
+    border-color: rgba(0,0,0,0.08);
+  }
+  body.theme-light .card-hover:hover { border-color: rgba(37,211,102,0.5); box-shadow: 0 24px 50px -30px rgba(37,211,102,0.35); }
+
+  body.theme-light .btn-ghost {
+    border-color: rgba(0,0,0,0.15);
+    color: #0B1511;
+    background: rgba(0,0,0,0.02);
+  }
+  body.theme-light .btn-ghost:hover { background: rgba(0,0,0,0.06); }
+
+  body.theme-light .ring-offer {
+    background:
+      radial-gradient(1200px 200px at 50% 0%, rgba(37,211,102,0.2), transparent 60%),
+      linear-gradient(180deg, #FFFFFF 0%, #F5F7F6 100%);
+    border-color: rgba(37,211,102,0.4);
+  }
+
+  /* Sobrescreve utilitários Tailwind mais usados */
+  body.theme-light .text-white { color: #0B1511 !important; }
+  body.theme-light .text-white\/90 { color: rgba(11,21,17,0.9) !important; }
+  body.theme-light .text-white\/80 { color: rgba(11,21,17,0.8) !important; }
+  body.theme-light .text-white\/70 { color: rgba(11,21,17,0.72) !important; }
+  body.theme-light .text-white\/60 { color: rgba(11,21,17,0.65) !important; }
+  body.theme-light .text-white\/55 { color: rgba(11,21,17,0.6) !important; }
+  body.theme-light .text-white\/50 { color: rgba(11,21,17,0.55) !important; }
+  body.theme-light .text-white\/45 { color: rgba(11,21,17,0.5) !important; }
+  body.theme-light .text-white\/40 { color: rgba(11,21,17,0.5) !important; }
+  body.theme-light .text-white\/30 { color: rgba(11,21,17,0.35) !important; }
+
+  body.theme-light .bg-black\/30 { background-color: rgba(0,0,0,0.03) !important; }
+  body.theme-light .bg-black\/40 { background-color: rgba(0,0,0,0.04) !important; }
+  body.theme-light .bg-brand-bg\/70 { background-color: rgba(255,255,255,0.85) !important; }
+  body.theme-light .bg-brand-card\/90 { background-color: rgba(255,255,255,0.95) !important; }
+
+  body.theme-light .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+  body.theme-light .bg-white\/10 { background-color: rgba(0,0,0,0.06) !important; }
+  body.theme-light .bg-white\/\[0\.02\] { background-color: rgba(0,0,0,0.03) !important; }
+
+  body.theme-light .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
+  body.theme-light .border-white\/10 { border-color: rgba(0,0,0,0.1) !important; }
+  body.theme-light .ring-white\/10 { --tw-ring-color: rgba(0,0,0,0.1) !important; }
+
+  body.theme-light .bg-gradient-to-b.from-black\/20 { background-image: linear-gradient(to bottom, rgba(0,0,0,0.02), transparent) !important; }
+  body.theme-light .bg-gradient-to-b.from-black\/30 { background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), transparent) !important; }
+  body.theme-light .bg-gradient-to-b.from-transparent.to-black\/30 { background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.03)) !important; }
+  body.theme-light .bg-gradient-to-b.from-transparent.to-black\/40 { background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.04)) !important; }
+
+  body.theme-light .bg-red-500\/10 { background-color: rgba(239,68,68,0.08) !important; }
+  body.theme-light .bg-brand-green\/5 { background-color: rgba(37,211,102,0.06) !important; }
+  body.theme-light .bg-brand-green\/10 { background-color: rgba(37,211,102,0.1) !important; }
+  body.theme-light .bg-brand-green\/15 { background-color: rgba(37,211,102,0.15) !important; }
+  body.theme-light .bg-brand-green\/20 { background-color: rgba(37,211,102,0.18) !important; }
+
+  body.theme-light .border-brand-green\/25 { border-color: rgba(37,211,102,0.35) !important; }
+  body.theme-light .border-brand-green\/28 { border-color: rgba(37,211,102,0.4) !important; }
+  body.theme-light .border-brand-green\/30 { border-color: rgba(37,211,102,0.4) !important; }
+  body.theme-light .border-brand-green\/40 { border-color: rgba(37,211,102,0.5) !important; }
+
+  body.theme-light .shadow-glow { box-shadow: 0 10px 40px -10px rgba(37,211,102,0.3); }
+
+  /* Lead modal — light */
+  body.theme-light .lead-backdrop { background: rgba(240,243,242,0.75); }
+  body.theme-light .lead-panel { background: #FFFFFF; border-color: rgba(0,0,0,0.1); box-shadow: 0 30px 80px -30px rgba(0,0,0,0.25); }
+  body.theme-light #leadTitle { color: #0B1511; }
+  body.theme-light .lead-input { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.12); color: #0B1511; }
+  body.theme-light .lead-input::placeholder { color: rgba(11,21,17,0.5); }
+  body.theme-light .lead-input:focus { background: rgba(37,211,102,0.05); }
+  body.theme-light .lead-phone-wrap { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.12); }
+  body.theme-light .lead-phone-prefix { color: rgba(11,21,17,0.7); border-right-color: rgba(0,0,0,0.1); }
+  body.theme-light .lead-close { border-color: rgba(0,0,0,0.12); color: rgba(11,21,17,0.7); }
+  body.theme-light .lead-close:hover { background: rgba(0,0,0,0.05); color: #0B1511; }
+
+  /* Censurado overlay */
+  body.theme-light .censored::after {
+    color: rgba(11,21,17,0.75);
+    background: rgba(255,255,255,0.7);
+    border-color: rgba(0,0,0,0.12);
+  }
+  body.theme-light .censor-inline { background: rgba(0,0,0,0.05); }
+
   @media (max-width: 640px) {
     .phone { width: 260px; height: 540px; }
     .number-big { font-size: 42px; }
@@ -285,6 +420,12 @@
 </style>
 </head>
 <body class="antialiased">
+
+<!-- THEME TOGGLE -->
+<button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+  <svg class="theme-icon-moon w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  <svg class="theme-icon-sun w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+</button>
 
 <!-- NAV -->
 <!-- MINI CONTACT BAR -->
@@ -304,7 +445,7 @@
         @agenciadigital.br
       </a>
     </div>
-    <div class="flex items-center gap-2 text-white/50">
+    <div class="flex items-center gap-2 text-white/50 pr-10">
       <span class="dot-live"></span> Atendimento online agora
     </div>
   </div>
@@ -997,6 +1138,30 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* THEME TOGGLE */
+  (function() {
+    const KEY = 'digital-theme';
+    const body = document.body;
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+
+    function apply(theme) {
+      if (theme === 'light') body.classList.add('theme-light');
+      else body.classList.remove('theme-light');
+      btn.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+    }
+
+    let saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    apply(saved === 'light' ? 'light' : 'dark');
+
+    btn.addEventListener('click', () => {
+      const next = body.classList.contains('theme-light') ? 'dark' : 'light';
+      apply(next);
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+    });
+  })();
 
   (function() {
     const btn = document.getElementById('copyEmailBtn');
