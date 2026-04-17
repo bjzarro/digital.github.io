@@ -201,9 +201,86 @@
   }
   @keyframes stripe { from{background-position:0 0;} to{background-position:200% 0;} }
 
+  /* Lead Modal — clean */
+  .lead-backdrop {
+    position: fixed; inset: 0; z-index: 80;
+    background: rgba(5, 8, 9, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s ease;
+    overflow-y: auto;
+  }
+  .lead-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+  .lead-panel {
+    position: relative; width: 100%; max-width: 560px;
+    background: #111618;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 40px 40px 32px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
+    transform: translateY(8px);
+    opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+  }
+  .lead-backdrop.is-open .lead-panel { transform: translateY(0); opacity: 1; }
+
+  .lead-close {
+    position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(230,237,234,0.7); cursor: pointer; transition: background .15s ease, color .15s ease;
+  }
+  .lead-close:hover { background: rgba(255,255,255,0.06); color: #E6EDEA; }
+
+  .lead-field { position: relative; }
+  .lead-input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #E6EDEA;
+    border-radius: 8px;
+    padding: 15px 16px;
+    font-size: 15px;
+    transition: border-color .15s ease, background .15s ease;
+    outline: none;
+  }
+  .lead-input::placeholder { color: rgba(230,237,234,0.45); }
+  .lead-input:focus { border-color: rgba(37,211,102,0.5); background: rgba(255,255,255,0.05); }
+
+  .lead-phone-wrap { display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); transition: border-color .15s ease, background .15s ease; }
+  .lead-phone-wrap:focus-within { border-color: rgba(37,211,102,0.5); background: rgba(255,255,255,0.05); }
+  .lead-phone-prefix {
+    display: flex; align-items: center; padding: 0 16px;
+    font-weight: 500; font-size: 15px; color: rgba(230,237,234,0.7);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .lead-phone-wrap .lead-input { border: 0; background: transparent; border-radius: 0; }
+  .lead-phone-wrap .lead-input:focus { background: transparent; }
+
+  .lead-label { display: block; font-size: 12px; font-weight: 500; color: rgba(230,237,234,0.6); margin-bottom: 6px; }
+  .lead-error { display: none; margin-top: 6px; font-size: 12px; color: #FF8A8A; }
+  .lead-field.has-error .lead-input, .lead-field.has-error .lead-phone-wrap { border-color: rgba(255,120,120,0.55); }
+  .lead-field.has-error .lead-error { display: block; }
+
+  body.modal-open { overflow: hidden; }
+
   @media (max-width: 640px) {
     .phone { width: 260px; height: 540px; }
     .number-big { font-size: 42px; }
+    .lead-backdrop { padding: 0; align-items: flex-end; }
+    .lead-panel {
+      padding: 28px 22px 24px;
+      border-radius: 14px 14px 0 0;
+      max-width: 100%;
+      max-height: 92dvh;
+    }
+    .lead-panel h3 { font-size: 1.375rem; }
   }
 </style>
 </head>
@@ -288,7 +365,8 @@
 
       <div class="mt-8 flex flex-col sm:flex-row gap-3">
         <a href="https://wa.me/5531999963861?text=Quero%20mais%20clientes%20agora!%20Me%20envie%20o%20or%C3%A7amento."
-           class="btn-wa animate-pulse-green inline-flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-2xl text-base">
+           data-lead-intent="Quero mais clientes agora — landing page de alta conversão"
+           class="btn-wa js-open-lead animate-pulse-green inline-flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-2xl text-base">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
           Quero mais clientes agora
         </a>
@@ -429,7 +507,8 @@
         </div>
       </div>
       <a href="https://wa.me/5531999963861?text=Quero%20meu%20sistema%20de%20clientes%20no%20WhatsApp."
-         class="btn-wa mt-10 inline-flex items-center gap-2 font-bold px-6 py-4 rounded-2xl">
+         data-lead-intent="Quero o sistema agora — geração de clientes no WhatsApp"
+         class="btn-wa js-open-lead mt-10 inline-flex items-center gap-2 font-bold px-6 py-4 rounded-2xl">
         Quero o sistema agora →
       </a>
     </div>
@@ -609,7 +688,8 @@
 
     <div class="mt-10 text-center">
       <a href="https://wa.me/5531999963861?text=Quero%20come%C3%A7ar%20o%20projeto%20agora."
-         class="btn-wa inline-flex items-center gap-2 font-bold px-6 py-4 rounded-2xl">
+         data-lead-intent="Começar meu projeto agora"
+         class="btn-wa js-open-lead inline-flex items-center gap-2 font-bold px-6 py-4 rounded-2xl">
         Começar meu projeto agora
       </a>
     </div>
@@ -699,7 +779,8 @@
 
       <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <a href="https://wa.me/5531999963861?text=Quero%20garantir%20minha%20vaga%20da%20oferta%20desta%20semana."
-           class="btn-wa inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl animate-pulse-green">
+           data-lead-intent="Garantir vaga da oferta desta semana"
+           class="btn-wa js-open-lead inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl animate-pulse-green">
           Garantir minha vaga agora
         </a>
         <div class="text-sm text-white/60">⚡ Resposta em minutos pelo WhatsApp</div>
@@ -767,7 +848,8 @@
       Enquanto você pensa, alguém busca pelo seu serviço no Google agora. Vai achar você — ou outra pessoa. Decida do lado certo.
     </p>
     <a href="https://wa.me/5531999963861?text=Quero%20minha%20landing%20page%20agora!"
-       class="btn-wa mt-10 inline-flex items-center gap-2 font-bold px-8 py-5 rounded-2xl text-lg animate-pulse-green">
+       data-lead-intent="Quero mais clientes agora — CTA final"
+       class="btn-wa js-open-lead mt-10 inline-flex items-center gap-2 font-bold px-8 py-5 rounded-2xl text-lg animate-pulse-green">
       <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
       Quero mais clientes agora
     </a>
@@ -843,7 +925,8 @@
     </div>
     <div class="md:text-right">
       <a href="https://wa.me/5531999963861?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento."
-         class="btn-wa inline-flex items-center gap-2 font-bold px-5 py-3 rounded-xl">
+         data-lead-intent="Pedir orçamento"
+         class="btn-wa js-open-lead inline-flex items-center gap-2 font-bold px-5 py-3 rounded-xl">
         Pedir orçamento agora
       </a>
       <div class="mt-4 text-xs text-white/40">© <span id="yr"></span> Digital. Todos os direitos reservados.</div>
@@ -858,6 +941,53 @@
     <path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/>
   </svg>
 </a>
+
+<!-- LEAD MODAL -->
+<div id="leadModal" class="lead-backdrop" role="dialog" aria-modal="true" aria-labelledby="leadTitle" aria-hidden="true">
+  <div class="lead-panel">
+    <button type="button" class="lead-close" aria-label="Fechar" data-lead-close>
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <img src="first_logo.jpg" alt="Digital" class="w-11 h-11 rounded-lg object-cover ring-1 ring-white/10" />
+        <span class="font-display font-extrabold text-lg tracking-tight">Digital<span class="text-brand-green">.</span></span>
+      </div>
+      <h3 id="leadTitle" class="font-display font-bold text-2xl leading-tight text-white">
+        Vamos criar algo incrível juntos!
+      </h3>
+      <p class="mt-2 text-sm text-white/60">
+        Assim que você preencher o formulário, você será redirecionado automaticamente para o nosso WhatsApp.
+      </p>
+
+      <form id="leadForm" class="mt-7 space-y-4" novalidate>
+        <div class="lead-field">
+          <input id="leadName" name="name" class="lead-input" type="text" placeholder="Seu nome / empresa" autocomplete="name" required />
+          <div class="lead-error">Por favor, preencha seu nome ou empresa.</div>
+        </div>
+
+        <div class="lead-field">
+          <input id="leadEmail" name="email" class="lead-input" type="email" placeholder="E-mail de contato" autocomplete="email" required />
+          <div class="lead-error">Informe um e-mail válido.</div>
+        </div>
+
+        <div class="lead-field">
+          <label class="lead-label" for="leadPhone">WhatsApp de contato</label>
+          <div class="lead-phone-wrap">
+            <span class="lead-phone-prefix">+55</span>
+            <input id="leadPhone" name="phone" class="lead-input" type="tel" inputmode="numeric" placeholder="(31) 9 9999-9999" autocomplete="tel-national" required />
+          </div>
+          <div class="lead-error">Informe um WhatsApp válido (DDD + número).</div>
+        </div>
+
+        <button type="submit" class="btn-wa w-full inline-flex items-center justify-center gap-2 font-semibold px-6 py-4 rounded-lg text-base mt-5">
+          Enviar e Avançar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- TOAST -->
 <div id="toast" class="fixed bottom-24 right-6 z-[60] translate-y-4 opacity-0 pointer-events-none transition-all duration-300 bg-brand-green text-black font-semibold text-sm px-4 py-3 rounded-xl shadow-glow flex items-center gap-2">
@@ -932,6 +1062,116 @@
       } else {
         showToast('Não foi possível copiar. Selecione manualmente.');
       }
+    });
+  })();
+
+  /* LEAD MODAL */
+  (function() {
+    const WA_NUMBER = '5531999963861';
+    const modal = document.getElementById('leadModal');
+    const form = document.getElementById('leadForm');
+    if (!modal || !form) return;
+
+    const nameInput = document.getElementById('leadName');
+    const emailInput = document.getElementById('leadEmail');
+    const phoneInput = document.getElementById('leadPhone');
+    let currentIntent = '';
+    let lastFocused = null;
+
+    function openModal(intent) {
+      currentIntent = intent || '';
+      lastFocused = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      setTimeout(() => nameInput.focus(), 200);
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      clearErrors();
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function clearErrors() {
+      form.querySelectorAll('.lead-field.has-error').forEach(el => el.classList.remove('has-error'));
+    }
+
+    function markError(input) {
+      const field = input.closest('.lead-field');
+      if (field) field.classList.add('has-error');
+    }
+
+    function validEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+    }
+
+    function digitsOnly(v) { return (v || '').replace(/\D+/g, ''); }
+
+    function formatPhone(digits) {
+      // BR: DDD + 9 digits (celular) or DDD + 8 (fixo)
+      const d = digits.slice(0, 11);
+      if (d.length <= 2) return d.length ? '(' + d : '';
+      if (d.length <= 7) return '(' + d.slice(0,2) + ') ' + d.slice(2);
+      if (d.length <= 10) return '(' + d.slice(0,2) + ') ' + d.slice(2, d.length-4) + '-' + d.slice(d.length-4);
+      return '(' + d.slice(0,2) + ') ' + d.slice(2,3) + ' ' + d.slice(3,7) + '-' + d.slice(7,11);
+    }
+
+    phoneInput.addEventListener('input', (e) => {
+      const d = digitsOnly(e.target.value);
+      e.target.value = formatPhone(d);
+    });
+
+    // Open modal on CTA clicks
+    document.querySelectorAll('.js-open-lead').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const intent = el.getAttribute('data-lead-intent') || el.textContent.trim();
+        openModal(intent);
+      });
+    });
+
+    // Close handlers
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.closest('[data-lead-close]')) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+
+    // Submit handler
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const phoneDigits = digitsOnly(phoneInput.value);
+
+      let ok = true;
+      if (!name) { markError(nameInput); ok = false; }
+      if (!validEmail(email)) { markError(emailInput); ok = false; }
+      if (phoneDigits.length < 10 || phoneDigits.length > 11) { markError(phoneInput); ok = false; }
+      if (!ok) return;
+
+      const prettyPhone = '+55 ' + formatPhone(phoneDigits);
+      const lines = [
+        'Olá! Quero saber mais sobre a landing page da Digital.',
+        '',
+        '• Nome/Empresa: ' + name,
+        '• E-mail: ' + email,
+        '• WhatsApp: ' + prettyPhone,
+      ];
+      if (currentIntent) lines.push('• Interesse: ' + currentIntent);
+
+      const msg = encodeURIComponent(lines.join('\n'));
+      const url = 'https://wa.me/' + WA_NUMBER + '?text=' + msg;
+
+      closeModal();
+      form.reset();
+      window.open(url, '_blank', 'noopener');
     });
   })();
 </script>
