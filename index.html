@@ -3,1115 +3,1342 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Água Mineral Varginha - Água pura direto da fonte. Entrega rápida em Varginha e região. Galões 20L, fardos e fornecimento para empresas." />
-<title>Água Mineral Varginha | Pureza Direto da Fonte</title>
+<meta name="description" content="Digital — Criamos landing pages que transformam visitantes em clientes reais no seu WhatsApp. Sistema pronto para gerar mais agendamentos todos os dias." />
+<title>Digital Agência</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="icon" href="https://aguamineralvarginha.com.br/wp-content/uploads/2020/04/13.-logo_amv_original.png">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            green: '#25D366',
+            dark: '#128C7E',
+            bg: '#0B0F10',
+            card: '#111618',
+            line: '#1C2326',
+          }
+        },
+        boxShadow: {
+          'glow': '0 10px 40px -10px rgba(37, 211, 102, 0.45)',
+          'glow-lg': '0 25px 70px -20px rgba(37, 211, 102, 0.55)',
+        },
+        animation: {
+          'float': 'float 6s ease-in-out infinite',
+          'float-slow': 'float 9s ease-in-out infinite',
+          'pulse-green': 'pulseGreen 4.5s ease-in-out infinite',
+          'typing': 'typing 2.5s steps(30,end) infinite',
+        },
+        keyframes: {
+          float: {
+            '0%,100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-14px)' },
+          },
+          pulseGreen: {
+            '0%,100%': { boxShadow: '0 0 0 0 rgba(37,211,102,0.35)' },
+            '50%': { boxShadow: '0 0 0 12px rgba(37,211,102,0)' },
+          },
+        }
+      }
+    }
+  }
+</script>
+
 <style>
-  :root {
-    --azul-profundo: #0a4d8c;
-    --azul-primario: #0f6fb8;
-    --azul-claro: #2d9cdb;
-    --azul-suave: #e6f4fb;
-    --verde-agua: #56c1c9;
-    --branco: #ffffff;
-    --cinza-claro: #f7fafc;
-    --cinza-texto: #4a5568;
-    --cinza-escuro: #1a202c;
-    --verde-wpp: #25D366;
-    --verde-wpp-hover: #1ebe5d;
-    --sombra-suave: 0 8px 24px rgba(15, 111, 184, 0.12);
-    --sombra-forte: 0 16px 40px rgba(15, 111, 184, 0.22);
-    --radius: 14px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--cinza-escuro);
-    line-height: 1.6;
-    overflow-x: hidden;
-    background: var(--branco);
+  body { font-family: 'Inter', sans-serif; background: #0B0F10; color: #E6EDEA; }
+  h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+
+  .grid-bg {
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(37,211,102,0.12), transparent 45%),
+      radial-gradient(circle at 80% 60%, rgba(18,140,126,0.10), transparent 50%),
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: auto, auto, 44px 44px, 44px 44px;
   }
 
-  h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; display: block; }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .gradient-text {
+    background: linear-gradient(90deg, #25D366 0%, #8AFFB8 60%, #FFFFFF 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
 
-  /* ---------- HEADER ---------- */
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(255, 255, 255, 0.96);
+  .btn-wa {
+    background: linear-gradient(135deg, #0FA55B 0%, #1EB858 35%, #25D366 65%, #8AFFB8 100%);
+    background-size: 220% 220%;
+    background-position: 0% 50%;
+    color: #08110B;
+    box-shadow: 0 14px 34px -12px rgba(37,211,102,0.55), inset 0 1px 0 rgba(255,255,255,0.35);
+    transition: background-position .6s ease, transform .2s ease, box-shadow .25s ease, filter .2s ease;
+  }
+  .btn-wa:hover { transform: translateY(-2px); filter: brightness(1.04); background-position: 100% 50%; box-shadow: 0 20px 40px -14px rgba(37,211,102,0.7); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,0.15); color: #E6EDEA; background: rgba(255,255,255,0.02); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.06); }
+
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 22px;
+  }
+  .card-hover { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(37,211,102,0.35); box-shadow: 0 30px 60px -30px rgba(37,211,102,0.35); }
+
+  /* Phone mockup */
+  .phone {
+    width: 300px; height: 610px; border-radius: 46px;
+    background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
+    padding: 14px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.9), 0 0 0 2px rgba(255,255,255,.05);
+    position: relative;
+  }
+  .phone::before {
+    content: ""; position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+    width: 110px; height: 28px; background: #000; border-radius: 18px; z-index: 2;
+  }
+  .phone-screen {
+    width: 100%; height: 100%; border-radius: 34px; overflow: hidden;
+    background: #0b141a; display: flex; flex-direction: column;
+  }
+  .wa-header {
+    background: #075E54; padding: 16px 14px 10px; color: white; display: flex; align-items: center; gap: 10px;
+    padding-top: 44px;
+  }
+  .wa-body {
+    flex: 1; padding: 14px 12px; background-color: #0b141a;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(37,211,102,0.05), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(37,211,102,0.05), transparent 40%);
+    display: flex; flex-direction: column; gap: 8px; overflow: hidden;
+  }
+  .msg { max-width: 80%; padding: 8px 10px; border-radius: 10px; font-size: 13px; line-height: 1.35; }
+  .msg-in  { background: #202c33; color: #e9edef; align-self: flex-start; border-top-left-radius: 2px; }
+  .msg-out { background: #005c4b; color: #e9edef; align-self: flex-end; border-top-right-radius: 2px; }
+  .msg small { display: block; font-size: 10px; opacity: .6; margin-top: 3px; text-align: right; }
+
+  .marquee { display: flex; overflow: hidden; gap: 48px; mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+  .marquee-track { display: flex; gap: 48px; animation: marquee 35s linear infinite; white-space: nowrap; }
+  @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #8AFFB8;
+  }
+  .eyebrow::before {
+    content: ""; width: 28px; height: 1px;
+    background: linear-gradient(90deg, rgba(37,211,102,0.9), rgba(37,211,102,0));
+  }
+  .dot-live { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 0 0 #25D366; animation: pulseGreen 2.8s infinite; }
+  @keyframes pulseGreen { 0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5);} 50%{box-shadow:0 0 0 8px rgba(37,211,102,0);} }
+
+  .number-big {
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 56px; line-height: 1;
+    background: linear-gradient(180deg, #FFFFFF 0%, #8AFFB8 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  details[open] .faq-chevron { transform: rotate(45deg); }
+  .faq-chevron { transition: transform .25s ease; }
+
+  /* Censurado — blur temporário até os dados reais ficarem prontos */
+  .censored { position: relative; }
+  .censored > * { filter: blur(6px); user-select: none; pointer-events: none; }
+  .censored::after {
+    content: "Em breve";
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    background: rgba(11,15,16,0.55);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 14px; border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+  .censor-inline {
+    filter: blur(5px); user-select: none; pointer-events: none;
+    background: rgba(255,255,255,0.05); border-radius: 4px; padding: 0 4px;
+  }
+
+  .sticky-wa {
+    position: fixed; bottom: 20px; right: 20px; z-index: 50;
+    width: 62px; height: 62px; border-radius: 50%;
+    background: linear-gradient(135deg, #0FA55B 0%, #25D366 60%, #8AFFB8 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 14px 30px -10px rgba(37,211,102,.55);
+    transition: transform .25s ease, box-shadow .25s ease, filter .2s ease;
+  }
+  .sticky-wa:hover { transform: translateY(-2px) scale(1.04); filter: brightness(1.05); box-shadow: 0 18px 40px -12px rgba(37,211,102,.7); }
+  .sticky-wa::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(37,211,102,.45);
+    animation: stickyPulse 5s ease-in-out infinite;
+  }
+  @keyframes stickyPulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.35); }
+    50% { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+  }
+
+  .ring-offer {
+    background:
+      radial-gradient(1200px 200px at 50% 0%, rgba(37,211,102,.25), transparent 60%),
+      linear-gradient(180deg, #0F1617 0%, #0B0F10 100%);
+    border: 1px solid rgba(37,211,102,0.28);
+  }
+
+  .stripe {
+    background: linear-gradient(90deg, #25D366, #8AFFB8, #25D366);
+    background-size: 200% 100%;
+    animation: stripe 4s linear infinite;
+  }
+  @keyframes stripe { from{background-position:0 0;} to{background-position:200% 0;} }
+
+  /* Lead Modal — clean */
+  .lead-backdrop {
+    position: fixed; inset: 0; z-index: 80;
+    background: rgba(5, 8, 9, 0.72);
     backdrop-filter: blur(8px);
-    z-index: 1000;
-    transition: all .3s ease;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s ease;
+    overflow-y: auto;
   }
-  header.scrolled { box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .nav-logo { display: flex; align-items: center; gap: 10px; }
-  .nav-logo img { height: 50px; width: auto; }
-  .nav-logo span {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: var(--azul-profundo);
-    font-size: 1.05rem;
-    line-height: 1.1;
-  }
-  .nav-menu { display: flex; gap: 28px; align-items: center; }
-  .nav-menu a {
-    font-weight: 500;
-    color: var(--cinza-texto);
-    font-size: .95rem;
-    transition: color .2s;
-  }
-  .nav-menu a:hover { color: var(--azul-primario); }
-  .nav-cta {
-    background: var(--verde-wpp);
-    color: #fff !important;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all .25s;
-  }
-  .nav-cta:hover { background: var(--verde-wpp-hover); transform: translateY(-2px); }
-  .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--azul-profundo); cursor: pointer; }
+  .lead-backdrop.is-open { opacity: 1; pointer-events: auto; }
 
-  /* ---------- HERO ---------- */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 120px 0 80px;
-    background:
-      linear-gradient(135deg, rgba(10, 77, 140, 0.85) 0%, rgba(15, 111, 184, 0.75) 60%, rgba(45, 156, 219, 0.65) 100%),
-      url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
-    color: #fff;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.18), transparent 55%);
-    pointer-events: none;
-  }
-  .hero-content {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: .85rem;
-    font-weight: 500;
-    margin-bottom: 24px;
-    backdrop-filter: blur(10px);
-  }
-  .hero-badge i { color: #7fd4ff; }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.6rem);
-    font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-  }
-  .hero h1 span { color: #7fd4ff; }
-  .hero p.sub {
-    font-size: clamp(1rem, 1.4vw, 1.2rem);
-    margin-bottom: 36px;
-    opacity: 0.95;
-    max-width: 560px;
-  }
-  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all .28s cubic-bezier(.25,.8,.25,1);
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
-  }
-  .btn-primary {
-    background: var(--verde-wpp);
-    color: #fff;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, .35);
-  }
-  .btn-primary:hover {
-    background: var(--verde-wpp-hover);
-    transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(37, 211, 102, .45);
-  }
-  .btn-outline {
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255,255,255,0.5);
-  }
-  .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
-
-  .hero-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.18);
-    backdrop-filter: blur(14px);
-    border-radius: 20px;
-    padding: 32px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,.2);
-  }
-  .hero-card img {
-    max-height: 150px;
-    margin: 0 auto 20px;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25));
-  }
-  .hero-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
-  .hero-card p { opacity: .9; font-size: .95rem; margin-bottom: 20px; }
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-  .hero-stats div strong {
-    display: block;
-    font-size: 1.5rem;
-    font-family: 'Montserrat';
-    color: #7fd4ff;
-  }
-  .hero-stats div span { font-size: .75rem; opacity: .85; }
-
-  .wave {
-    position: absolute;
-    bottom: -1px; left: 0; right: 0;
-    line-height: 0;
-    z-index: 2;
-  }
-  .wave svg { width: 100%; height: 80px; display: block; }
-
-  /* ---------- SECTIONS GERAL ---------- */
-  section { padding: 90px 0; }
-  .section-header {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 60px;
-  }
-  .section-tag {
-    display: inline-block;
-    background: var(--azul-suave);
-    color: var(--azul-primario);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: .85rem;
-    font-weight: 600;
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
-  .section-header h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    color: var(--cinza-escuro);
-    margin-bottom: 14px;
-  }
-  .section-header h2 span { color: var(--azul-primario); }
-  .section-header p { color: var(--cinza-texto); font-size: 1.05rem; }
-
-  /* ---------- BENEFÍCIOS ---------- */
-  .beneficios { background: var(--cinza-claro); }
-  .beneficios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-  }
-  .beneficio-card {
-    background: #fff;
-    padding: 36px 28px;
-    border-radius: var(--radius);
-    text-align: center;
-    transition: all .3s;
-    border: 1px solid transparent;
-    box-shadow: var(--sombra-suave);
-  }
-  .beneficio-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--azul-claro);
-    box-shadow: var(--sombra-forte);
-  }
-  .beneficio-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--azul-primario), var(--azul-claro));
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.7rem;
-    box-shadow: 0 10px 20px rgba(15, 111, 184, .25);
-  }
-  .beneficio-card h3 { font-size: 1.15rem; margin-bottom: 10px; color: var(--cinza-escuro); }
-  .beneficio-card p { color: var(--cinza-texto); font-size: .95rem; }
-
-  /* ---------- SOBRE ---------- */
-  .sobre-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  .sobre-image {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--sombra-forte);
-    aspect-ratio: 4/5;
-    background: url('https://images.unsplash.com/photo-1519455953755-af066f52f1a6?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-  }
-  .sobre-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(10,77,140,.45));
-  }
-  .sobre-badge {
-    position: absolute;
-    bottom: 24px; left: 24px; right: 24px;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    padding: 18px 20px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    z-index: 2;
-  }
-  .sobre-badge i {
-    font-size: 1.6rem;
-    color: var(--azul-primario);
-    background: var(--azul-suave);
-    padding: 12px;
-    border-radius: 12px;
-  }
-  .sobre-badge strong { display: block; font-family: 'Montserrat'; color: var(--cinza-escuro); }
-  .sobre-badge span { font-size: .85rem; color: var(--cinza-texto); }
-
-  .sobre-texto h2 {
-    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-    margin-bottom: 20px;
-    color: var(--cinza-escuro);
-  }
-  .sobre-texto h2 span { color: var(--azul-primario); }
-  .sobre-texto p {
-    color: var(--cinza-texto);
-    margin-bottom: 16px;
-    font-size: 1.02rem;
-  }
-  .sobre-lista {
-    list-style: none;
-    margin: 24px 0 32px;
-  }
-  .sobre-lista li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-    color: var(--cinza-texto);
-  }
-  .sobre-lista i {
-    color: var(--verde-agua);
-    background: rgba(86, 193, 201, .12);
-    padding: 6px;
-    border-radius: 50%;
-    font-size: .75rem;
-    margin-top: 3px;
-  }
-  .sobre-lista strong { color: var(--cinza-escuro); }
-
-  /* ---------- PRODUTOS ---------- */
-  .produtos { background: var(--cinza-claro); position: relative; }
-  .produtos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-  }
-  .produto-card {
-    background: #fff;
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: all .3s;
-    box-shadow: var(--sombra-suave);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  .produto-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-forte); }
-  .produto-img {
-    height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--azul-suave), #fff);
-    position: relative;
-    overflow: hidden;
-  }
-  .produto-img i {
-    font-size: 5rem;
-    color: var(--azul-primario);
-    z-index: 1;
-    filter: drop-shadow(0 8px 16px rgba(15,111,184,.2));
-  }
-  .produto-img::before {
-    content: "";
-    position: absolute;
-    width: 220px; height: 220px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(45,156,219,.18), transparent 70%);
-  }
-  .produto-badge {
-    position: absolute;
-    top: 16px; right: 16px;
-    background: var(--verde-agua);
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: .75rem;
-    font-weight: 600;
-    z-index: 2;
-  }
-  .produto-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-  .produto-body h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--cinza-escuro); }
-  .produto-body p { color: var(--cinza-texto); margin-bottom: 20px; font-size: .95rem; flex: 1; }
-  .produto-features {
-    list-style: none;
-    margin-bottom: 24px;
-  }
-  .produto-features li {
-    font-size: .9rem;
-    color: var(--cinza-texto);
-    padding: 4px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .produto-features i { color: var(--verde-agua); font-size: .8rem; }
-  .produto-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px;
-    background: var(--verde-wpp);
-    color: #fff;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all .25s;
-  }
-  .produto-cta:hover { background: var(--verde-wpp-hover); transform: scale(1.02); }
-
-  /* ---------- DEPOIMENTOS ---------- */
-  .depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 28px;
-  }
-  .depo-card {
-    background: #fff;
-    padding: 32px 28px;
-    border-radius: var(--radius);
-    border: 1px solid #e9eef5;
-    position: relative;
-    transition: all .3s;
-  }
-  .depo-card::before {
-    content: "\201C";
-    position: absolute;
-    top: -16px; left: 24px;
-    font-size: 6rem;
-    font-family: Georgia, serif;
-    color: var(--azul-primario);
-    opacity: .22;
-    line-height: 1;
-  }
-  .depo-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--azul-claro);
-    box-shadow: var(--sombra-suave);
-  }
-  .depo-stars { color: #f5b700; margin-bottom: 16px; }
-  .depo-texto {
-    color: var(--cinza-texto);
-    font-size: .98rem;
-    margin-bottom: 24px;
-    font-style: italic;
-    position: relative;
-    z-index: 1;
-  }
-  .depo-autor { display: flex; align-items: center; gap: 14px; }
-  .depo-avatar {
-    width: 50px; height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--azul-primario), var(--verde-agua));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: 700;
-    font-family: 'Montserrat';
-  }
-  .depo-autor strong { display: block; color: var(--cinza-escuro); font-family: 'Montserrat'; }
-  .depo-autor span { font-size: .85rem; color: var(--cinza-texto); }
-
-  /* ---------- CTA FORTE ---------- */
-  .cta-forte {
-    background:
-      linear-gradient(135deg, rgba(10,77,140,0.95), rgba(15,111,184,0.92)),
-      url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-forte h2 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    margin-bottom: 16px;
-  }
-  .cta-forte p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 36px;
-    opacity: .95;
-  }
-  .urgencia {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: .9rem;
-    font-weight: 500;
-    margin-bottom: 24px;
-    backdrop-filter: blur(10px);
-  }
-  .urgencia .pulse {
-    width: 10px; height: 10px;
-    background: #7fd4ff;
-    border-radius: 50%;
-    animation: pulse 1.5s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: .5; transform: scale(1.4); }
-  }
-  .cta-forte .btn {
-    padding: 20px 40px;
-    font-size: 1.1rem;
-  }
-
-  /* ---------- CONTATO ---------- */
-  .contato-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-  .contato-info h2 {
-    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-    margin-bottom: 16px;
-  }
-  .contato-info h2 span { color: var(--azul-primario); }
-  .contato-info > p {
-    color: var(--cinza-texto);
-    margin-bottom: 30px;
-  }
-  .contato-item {
-    display: flex;
-    gap: 18px;
-    padding: 18px 0;
-    border-bottom: 1px solid #e9eef5;
-  }
-  .contato-item:last-child { border-bottom: none; }
-  .contato-item i {
-    width: 50px;
-    height: 50px;
-    background: var(--azul-suave);
-    color: var(--azul-primario);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-  .contato-item strong {
-    display: block;
-    font-family: 'Montserrat';
-    color: var(--cinza-escuro);
-    margin-bottom: 4px;
-  }
-  .contato-item a, .contato-item p {
-    color: var(--cinza-texto);
-    transition: color .2s;
-  }
-  .contato-item a:hover { color: var(--azul-primario); }
-
-  .mapa {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--sombra-suave);
-    height: 100%;
-    min-height: 420px;
-  }
-  .mapa iframe { width: 100%; height: 100%; border: none; display: block; }
-
-  /* ---------- RODAPÉ ---------- */
-  footer {
-    background: var(--cinza-escuro);
-    color: #cbd5e0;
-    padding: 60px 0 20px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-  }
-  .footer-logo img {
-    height: 60px;
-    background: #fff;
-    padding: 6px;
+  .lead-panel {
+    position: relative; width: 100%; max-width: 560px;
+    background: #111618;
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 10px;
-  }
-  .footer-logo strong {
-    font-family: 'Montserrat';
-    color: #fff;
-    font-size: 1.1rem;
-  }
-  footer p { font-size: .92rem; line-height: 1.7; }
-  footer h4 {
-    color: #fff;
-    margin-bottom: 18px;
-    font-size: 1.05rem;
-  }
-  footer ul { list-style: none; }
-  footer ul li { margin-bottom: 10px; font-size: .92rem; }
-  footer ul li a { transition: color .2s; display: inline-flex; align-items: center; gap: 8px; }
-  footer ul li a:hover { color: var(--azul-claro); }
-  footer ul li i { color: var(--azul-claro); width: 16px; }
-  .footer-bottom {
-    text-align: center;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,.08);
-    font-size: .85rem;
-    color: #94a3b8;
-  }
-  .footer-bottom a { color: var(--azul-claro); }
-
-  /* ---------- WHATSAPP FLUTUANTE ---------- */
-  .whatsapp-float {
-    position: fixed;
-    bottom: 28px; right: 28px;
-    width: 60px; height: 60px;
-    background: var(--verde-wpp);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, .4);
-    z-index: 999;
-    transition: all .3s;
-    animation: floatPulse 2.5s infinite;
-  }
-  .whatsapp-float:hover {
-    transform: scale(1.1);
-    animation: none;
-  }
-  @keyframes floatPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .6); }
-    50% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-  }
-
-  /* ---------- ANIMAÇÕES ---------- */
-  .fade-in {
+    padding: 40px 40px 32px;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
+    transform: translateY(8px);
     opacity: 0;
-    transform: translateY(30px);
-    transition: all .7s cubic-bezier(.25,.8,.25,1);
+    transition: transform .25s ease, opacity .25s ease;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
   }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .lead-backdrop.is-open .lead-panel { transform: translateY(0); opacity: 1; }
+
+  .lead-close {
+    position: absolute; top: 16px; right: 16px; width: 36px; height: 36px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(230,237,234,0.7); cursor: pointer; transition: background .15s ease, color .15s ease;
+  }
+  .lead-close:hover { background: rgba(255,255,255,0.06); color: #E6EDEA; }
+
+  .lead-field { position: relative; }
+  .lead-input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #E6EDEA;
+    border-radius: 8px;
+    padding: 15px 16px;
+    font-size: 15px;
+    transition: border-color .15s ease, background .15s ease;
+    outline: none;
+  }
+  .lead-input::placeholder { color: rgba(230,237,234,0.45); }
+  .lead-input:focus { border-color: rgba(37,211,102,0.5); background: rgba(255,255,255,0.05); }
+
+  .lead-phone-wrap { display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); transition: border-color .15s ease, background .15s ease; }
+  .lead-phone-wrap:focus-within { border-color: rgba(37,211,102,0.5); background: rgba(255,255,255,0.05); }
+  .lead-phone-prefix {
+    display: flex; align-items: center; padding: 0 16px;
+    font-weight: 500; font-size: 15px; color: rgba(230,237,234,0.7);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .lead-phone-wrap .lead-input { border: 0; background: transparent; border-radius: 0; }
+  .lead-phone-wrap .lead-input:focus { background: transparent; }
+
+  .lead-label { display: block; font-size: 12px; font-weight: 500; color: rgba(116, 119, 117, 0.6); margin-bottom: 6px; }
+  .lead-error { display: none; margin-top: 6px; font-size: 12px; color: #FF8A8A; }
+  .lead-field.has-error .lead-input, .lead-field.has-error .lead-phone-wrap { border-color: rgba(255,120,120,0.55); }
+  .lead-field.has-error .lead-error { display: block; }
+
+  body.modal-open { overflow: hidden; }
+
+  /* Theme Toggle — botão sutil no canto */
+  .theme-toggle {
+    position: fixed; top: 6px; right: 6px; z-index: 60;
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(230,237,234,0.55);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .theme-toggle:hover { opacity: 1; background: rgba(255,255,255,0.08); color: #E6EDEA; border-color: rgba(255,255,255,0.18); }
+  .theme-toggle .theme-icon-sun { display: none; }
+  body.theme-light .theme-toggle .theme-icon-sun { display: block; }
+  body.theme-light .theme-toggle .theme-icon-moon { display: none; }
+
+  /* ============ LIGHT THEME ============ */
+  body.theme-light {
+    background: #F5F7F6;
+    color: #0B1511;
+  }
+  body.theme-light h1, body.theme-light h2, body.theme-light h3, body.theme-light h4 { color: #0B1511; }
+
+  body.theme-light .theme-toggle {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.1);
+    color: rgba(11,21,17,0.55);
+  }
+  body.theme-light .theme-toggle:hover { background: rgba(0,0,0,0.06); color: #0B1511; border-color: rgba(0,0,0,0.2); }
+
+  body.theme-light .grid-bg {
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(37,211,102,0.18), transparent 45%),
+      radial-gradient(circle at 80% 60%, rgba(18,140,126,0.12), transparent 50%),
+      linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: auto, auto, 44px 44px, 44px 44px;
   }
 
-  /* ---------- RESPONSIVO ---------- */
-  @media (max-width: 900px) {
-    .hero-content, .sobre-grid, .contato-grid, .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    .sobre-image { max-width: 420px; margin: 0 auto; width: 100%; }
-    .hero { padding: 100px 0 60px; }
-    section { padding: 70px 0; }
-    .nav-menu {
-      display: none;
-      position: absolute;
-      top: 100%; left: 0; right: 0;
-      background: #fff;
-      flex-direction: column;
-      padding: 20px;
-      gap: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.08);
-    }
-    .nav-menu.active { display: flex; }
-    .menu-toggle { display: block; }
-    .hero-stats div strong { font-size: 1.2rem; }
-    .nav-logo span { font-size: .9rem; }
+  body.theme-light .gradient-text {
+    background: linear-gradient(90deg, #0FA55B 0%, #25D366 50%, #0B1511 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  @media (max-width: 480px) {
-    .container { padding: 0 18px; }
-    .hero-cta { flex-direction: column; width: 100%; }
-    .hero-cta .btn { width: 100%; justify-content: center; }
-    .whatsapp-float { width: 54px; height: 54px; font-size: 1.5rem; bottom: 20px; right: 20px; }
+
+  body.theme-light .number-big {
+    background: linear-gradient(180deg, #0B1511 0%, #0FA55B 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  body.theme-light .eyebrow { color: #0FA55B; }
+
+  body.theme-light .card {
+    background: #FFFFFF;
+    border-color: rgba(0,0,0,0.08);
+  }
+  body.theme-light .card-hover:hover { border-color: rgba(37,211,102,0.5); box-shadow: 0 24px 50px -30px rgba(37,211,102,0.35); }
+
+  body.theme-light .btn-ghost {
+    border-color: rgba(0,0,0,0.15);
+    color: #0B1511;
+    background: rgba(0,0,0,0.02);
+  }
+  body.theme-light .btn-ghost:hover { background: rgba(0,0,0,0.06); }
+
+  body.theme-light .ring-offer {
+    background:
+      radial-gradient(1200px 200px at 50% 0%, rgba(37,211,102,0.2), transparent 60%),
+      linear-gradient(180deg, #FFFFFF 0%, #F5F7F6 100%);
+    border-color: rgba(37,211,102,0.4);
+  }
+
+  /* Sobrescreve utilitários Tailwind mais usados */
+  body.theme-light .text-white { color: #0B1511 !important; }
+  body.theme-light .text-white\/90 { color: rgba(11,21,17,0.9) !important; }
+  body.theme-light .text-white\/80 { color: rgba(11,21,17,0.8) !important; }
+  body.theme-light .text-white\/70 { color: rgba(11,21,17,0.72) !important; }
+  body.theme-light .text-white\/60 { color: rgba(11,21,17,0.65) !important; }
+  body.theme-light .text-white\/55 { color: rgba(11,21,17,0.6) !important; }
+  body.theme-light .text-white\/50 { color: rgba(11,21,17,0.55) !important; }
+  body.theme-light .text-white\/45 { color: rgba(11,21,17,0.5) !important; }
+  body.theme-light .text-white\/40 { color: rgba(11,21,17,0.5) !important; }
+  body.theme-light .text-white\/30 { color: rgba(11,21,17,0.35) !important; }
+
+  body.theme-light .bg-black\/30 { background-color: rgba(0,0,0,0.03) !important; }
+  body.theme-light .bg-black\/40 { background-color: rgba(0,0,0,0.04) !important; }
+  body.theme-light .bg-brand-bg\/70 { background-color: rgba(255,255,255,0.85) !important; }
+  body.theme-light .bg-brand-card\/90 { background-color: rgba(255,255,255,0.95) !important; }
+
+  body.theme-light .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+  body.theme-light .bg-white\/10 { background-color: rgba(0,0,0,0.06) !important; }
+  body.theme-light .bg-white\/\[0\.02\] { background-color: rgba(0,0,0,0.03) !important; }
+
+  body.theme-light .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
+  body.theme-light .border-white\/10 { border-color: rgba(0,0,0,0.1) !important; }
+  body.theme-light .ring-white\/10 { --tw-ring-color: rgba(0,0,0,0.1) !important; }
+
+  body.theme-light .bg-gradient-to-b.from-black\/20 { background-image: linear-gradient(to bottom, rgba(0,0,0,0.02), transparent) !important; }
+  body.theme-light .bg-gradient-to-b.from-black\/30 { background-image: linear-gradient(to bottom, rgba(0,0,0,0.03), transparent) !important; }
+  body.theme-light .bg-gradient-to-b.from-transparent.to-black\/30 { background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.03)) !important; }
+  body.theme-light .bg-gradient-to-b.from-transparent.to-black\/40 { background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.04)) !important; }
+
+  body.theme-light .bg-red-500\/10 { background-color: rgba(239,68,68,0.08) !important; }
+  body.theme-light .bg-brand-green\/5 { background-color: rgba(37,211,102,0.06) !important; }
+  body.theme-light .bg-brand-green\/10 { background-color: rgba(37,211,102,0.1) !important; }
+  body.theme-light .bg-brand-green\/15 { background-color: rgba(37,211,102,0.15) !important; }
+  body.theme-light .bg-brand-green\/20 { background-color: rgba(37,211,102,0.18) !important; }
+
+  body.theme-light .border-brand-green\/25 { border-color: rgba(37,211,102,0.35) !important; }
+  body.theme-light .border-brand-green\/28 { border-color: rgba(37,211,102,0.4) !important; }
+  body.theme-light .border-brand-green\/30 { border-color: rgba(37,211,102,0.4) !important; }
+  body.theme-light .border-brand-green\/40 { border-color: rgba(37,211,102,0.5) !important; }
+
+  body.theme-light .shadow-glow { box-shadow: 0 10px 40px -10px rgba(37,211,102,0.3); }
+
+  /* Lead modal — light */
+  body.theme-light .lead-backdrop { background: rgba(240,243,242,0.75); }
+  body.theme-light .lead-panel { background: #FFFFFF; border-color: rgba(0,0,0,0.1); box-shadow: 0 30px 80px -30px rgba(0,0,0,0.25); }
+  body.theme-light #leadTitle { color: #0B1511; }
+  body.theme-light .lead-input { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.12); color: #0B1511; }
+  body.theme-light .lead-input::placeholder { color: rgba(11,21,17,0.5); }
+  body.theme-light .lead-input:focus { background: rgba(37,211,102,0.05); }
+  body.theme-light .lead-phone-wrap { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.12); }
+  body.theme-light .lead-phone-prefix { color: rgba(11,21,17,0.7); border-right-color: rgba(0,0,0,0.1); }
+  body.theme-light .lead-close { border-color: rgba(0,0,0,0.12); color: rgba(11,21,17,0.7); }
+  body.theme-light .lead-close:hover { background: rgba(0,0,0,0.05); color: #0B1511; }
+
+  /* Censurado overlay */
+  body.theme-light .censored::after {
+    color: rgba(11,21,17,0.75);
+    background: rgba(255,255,255,0.7);
+    border-color: rgba(0,0,0,0.12);
+  }
+  body.theme-light .censor-inline { background: rgba(0,0,0,0.05); }
+
+  @media (max-width: 640px) {
+    .phone { width: 260px; height: 540px; }
+    .number-big { font-size: 42px; }
+    .lead-backdrop { padding: 0; align-items: flex-end; }
+    .lead-panel {
+      padding: 28px 22px 24px;
+      border-radius: 14px 14px 0 0;
+      max-width: 100%;
+      max-height: 92dvh;
+    }
+    .lead-panel h3 { font-size: 1.375rem; }
   }
 </style>
 </head>
-<body>
+<body class="antialiased">
 
-<!-- HEADER -->
-<header id="header">
-  <nav class="nav">
-    <a href="#" class="nav-logo">
-      <img src="https://aguamineralvarginha.com.br/wp-content/uploads/2020/04/13.-logo_amv_original.png" alt="Água Mineral Varginha">
-      <span>Água Mineral<br>Varginha</span>
-    </a>
-    <div class="nav-menu" id="navMenu">
-      <a href="#beneficios">Benefícios</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#contato">Contato</a>
-      <a href="https://wa.me/5535988686022?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos." target="_blank" class="nav-cta">
-        <i class="fab fa-whatsapp"></i> WhatsApp
+<!-- THEME TOGGLE -->
+<button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+  <svg class="theme-icon-moon w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  <svg class="theme-icon-sun w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+</button>
+
+<!-- NAV -->
+<!-- MINI CONTACT BAR -->
+<div class="hidden md:block border-b border-white/5 bg-black/30">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-9 flex items-center justify-between text-xs text-white/60">
+    <div class="flex items-center gap-5">
+      <a href="https://wa.me/5531999963861" class="flex items-center gap-1.5 hover:text-brand-green">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
+        (31) 9 9996-3861
+      </a>
+      <a href="mailto:orcamentos.agenciadigital@gmail.com" class="flex items-center gap-1.5 hover:text-brand-green">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
+        orcamentos.agenciadigital@gmail.com
+      </a>
+      <a href="https://instagram.com/agenciadigital.br" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-brand-green">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        @agenciadigital.br
       </a>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-  </nav>
+    <div class="flex items-center gap-2 text-white/50 pr-10">
+      <span class="dot-live"></span> Atendimento online agora
+    </div>
+  </div>
+</div>
+
+<header class="sticky top-0 z-40 backdrop-blur-lg bg-brand-bg/70 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <img src="first_logo.jpg" alt="Digital" class="w-10 h-10 rounded-xl object-cover ring-1 ring-white/10" />
+      <span class="font-display font-extrabold text-lg tracking-tight">Digital<span class="text-brand-green">.</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-white/70">
+      <a href="#solucao" class="hover:text-white">Solução</a>
+      <a href="#resultados" class="hover:text-white">Resultados</a>
+      <a href="#como-funciona" class="hover:text-white">Como Funciona</a>
+      <a href="#oferta" class="hover:text-white">Oferta</a>
+      <a href="#contato" class="hover:text-white">Contato</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+5531999963861" class="hidden lg:flex items-center gap-2 text-sm text-white/80 hover:text-white">
+        <span class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-brand-green" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
+        </span>
+        <span class="leading-tight">
+          <span class="block text-[10px] uppercase tracking-widest text-white/40">Fale agora</span>
+          <span class="block font-semibold">(31) 9 9996-3861</span>
+        </span>
+      </a>
+      <a href="https://wa.me/5531999963861?text=Ol%C3%A1!%20Quero%20mais%20clientes%20no%20meu%20WhatsApp."
+         class="btn-wa hidden sm:inline-flex items-center gap-2 font-semibold text-sm px-4 py-2.5 rounded-xl">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 01-4.82-1.32l-.35-.21-3.79.99 1.01-3.69-.22-.38a9.46 9.46 0 01-1.45-5.04c0-5.23 4.26-9.49 9.5-9.49 2.54 0 4.92.99 6.72 2.78a9.44 9.44 0 012.78 6.72c0 5.23-4.26 9.49-9.49 9.64z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge"><i class="fas fa-award"></i> Tradição em Varginha/MG desde sempre</div>
-        <h1>Pureza que nasce <span>direto da fonte</span> para sua família e empresa</h1>
-        <p class="sub">Água mineral cristalina, engarrafada com rigor e entregue com rapidez em toda Varginha e região. Saúde, qualidade e confiança em cada gota.</p>
-        <div class="hero-cta">
-          <a href="https://wa.me/5535988686022?text=Olá!%20Quero%20fazer%20um%20pedido%20de%20água%20mineral." target="_blank" class="btn btn-primary">
-            <i class="fab fa-whatsapp"></i> Peça no WhatsApp
-          </a>
-          <a href="tel:+553532141736" class="btn btn-outline">
-            <i class="fas fa-phone"></i> (35) 3214-1736
-          </a>
-        </div>
+<section class="grid-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-14 pb-20 md:pt-24 md:pb-28 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="text-xs text-white/60">Avaliação <span class="text-white font-semibold">5.0</span> <span class="text-brand-green">★★★★★</span></span>
       </div>
-      <div class="hero-card fade-in">
-        <img src="https://aguamineralvarginha.com.br/wp-content/uploads/2020/04/13.-logo_amv_original.png" alt="Logo Água Mineral Varginha">
-        <h3>Atendimento Rápido</h3>
-        <p>Entregamos o mesmo dia em Varginha e cidades vizinhas.</p>
-        <div class="hero-stats">
-          <div><strong>+20</strong><span>Anos de tradição</span></div>
-          <div><strong>100%</strong><span>Água da fonte</span></div>
-          <div><strong>24h</strong><span>Pedidos no WPP</span></div>
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+        Mais clientes <span class="gradient-text">no seu WhatsApp</span>.<br />
+        Todos os dias. No piloto automático.
+      </h1>
+      <p class="mt-6 text-lg text-white/70 max-w-2xl">
+        Criamos <strong class="text-white">landing pages estratégicas</strong> que transformam visitantes em conversas reais no seu WhatsApp — sem anúncios caros, sem enrolação e sem depender de sorte.
+      </p>
+
+      <ul class="mt-7 space-y-3 text-white/80">
+        <li class="flex items-start gap-3"><span class="mt-1 text-brand-green">✓</span> Sua página no ar em até <strong class="text-white">5 dias úteis</strong></li>
+        <li class="flex items-start gap-3"><span class="mt-1 text-brand-green">✓</span> Botões levando direto para o seu WhatsApp</li>
+        <li class="flex items-start gap-3"><span class="mt-1 text-brand-green">✓</span> Copy persuasiva + design que vende por você</li>
+      </ul>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="https://wa.me/5531999963861?text=Quero%20mais%20clientes%20agora!%20Me%20envie%20o%20or%C3%A7amento."
+           data-lead-intent="Quero mais clientes agora — landing page de alta conversão"
+           class="btn-wa js-open-lead animate-pulse-green inline-flex items-center justify-center gap-2 font-bold px-6 py-4 rounded-2xl text-base">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
+          Quero mais clientes agora
+        </a>
+        <a href="#como-funciona" class="btn-ghost inline-flex items-center justify-center gap-2 font-semibold px-6 py-4 rounded-2xl text-base">
+          Ver como funciona
+        </a>
+      </div>
+
+    </div>
+
+    <!-- PHONE MOCKUP -->
+    <div class="lg:col-span-5 flex justify-center lg:justify-end">
+      <div class="relative">
+        <div class="absolute -inset-6 bg-brand-green/20 blur-3xl rounded-full"></div>
+        <div class="phone animate-float relative">
+          <div class="phone-screen">
+            <div class="wa-header">
+              <div class="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center font-bold">C</div>
+              <div class="leading-tight">
+                <div class="text-sm font-semibold">Cliente (via Google)</div>
+                <div class="text-[10px] opacity-80">online agora</div>
+              </div>
+            </div>
+            <div class="wa-body">
+              <div class="msg msg-in">Oi! Vi a página de vocês, quero saber valores e horários de atendimento.<small>10:42</small></div>
+              <div class="msg msg-out">Olá! Claro 😊 Qual serviço você precisa?<small>10:43 ✓✓</small></div>
+              <div class="msg msg-in">Preciso agendar uma consulta ainda essa semana.<small>10:43</small></div>
+              <div class="msg msg-out">Perfeito! Tenho quinta às 15h. Garanto para você?<small>10:44 ✓✓</small></div>
+              <div class="msg msg-in">Pode garantir! Muito obrigada 🙌<small>10:44</small></div>
+              <div class="msg msg-out">Agendado! Te envio o endereço agora.<small>10:45 ✓✓</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -left-10 -bottom-6 card px-4 py-3 animate-float-slow flex items-center gap-3 bg-brand-card/90 backdrop-blur">
+          <div class="w-10 h-10 rounded-full bg-brand-green/20 flex items-center justify-center text-brand-green">↑</div>
+          <div>
+            <div class="text-xs text-white/60">Contatos/mês</div>
+            <div class="text-lg font-bold">+312%</div>
+          </div>
+        </div>
+        <div class="absolute -right-6 top-10 card px-4 py-3 animate-float flex items-center gap-3 bg-brand-card/90 backdrop-blur">
+          <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">💬</div>
+          <div>
+            <div class="text-xs text-white/60">Novo lead</div>
+            <div class="text-sm font-semibold">agora mesmo</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="wave">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#ffffff" d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,37.3C840,32,960,32,1080,37.3C1200,43,1320,53,1380,58.7L1440,64L1440,80L0,80Z"/>
-    </svg>
+</section>
+
+<!-- CLIENT LOGOS / SOCIAL PROOF STRIP -->
+<section class="border-y border-white/5 bg-black/30 py-10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <p class="text-center text-xs uppercase tracking-[0.25em] text-white/40 mb-6">Clientes que já geram resultados com a Digital</p>
+    <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 text-white/55">
+      <span class="flex items-center gap-2 font-semibold text-base">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Vitor Bizarro Advocacia
+      </span>
+      <span class="hidden sm:block w-px h-5 bg-white/10"></span>
+      <span class="flex items-center gap-2 font-semibold text-base">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Agência Digital
+      </span>
+      <span class="hidden sm:block w-px h-5 bg-white/10"></span>
+      <span class="flex items-center gap-2 font-semibold text-base">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Casa do Trabalhador
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="max-w-3xl">
+      <span class="eyebrow">O problema real</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">
+        Seu negócio é bom. <span class="text-white/50">Mas o celular continua em silêncio.</span>
+      </h2>
+      <p class="mt-5 text-white/70 text-lg">
+        Você entrega um serviço de qualidade, mas os clientes simplesmente não aparecem como deveriam. Enquanto isso, concorrentes menos preparados estão lotando a agenda — e não é por sorte.
+      </p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-red-500/10 flex items-center justify-center text-2xl">📉</div>
+        <h3 class="mt-4 font-bold text-lg">Agenda com buracos</h3>
+        <p class="mt-2 text-white/60 text-sm">Você depende de indicação e a semana vira uma loteria — tem semana boa e tem semana que assusta.</p>
+      </div>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-red-500/10 flex items-center justify-center text-2xl">💸</div>
+        <h3 class="mt-4 font-bold text-lg">Dinheiro jogado fora</h3>
+        <p class="mt-2 text-white/60 text-sm">Já tentou impulsionar post, pagar site genérico, aplicativo mirabolante… e nada trouxe cliente de verdade.</p>
+      </div>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-red-500/10 flex items-center justify-center text-2xl">😩</div>
+        <h3 class="mt-4 font-bold text-lg">Invisível no Google</h3>
+        <p class="mt-2 text-white/60 text-sm">Quem procura pelo seu serviço simplesmente não te encontra — ou acha um Instagram sem link e vai embora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section id="solucao" class="py-20 md:py-28 border-t border-white/5 bg-gradient-to-b from-black/20 to-transparent">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <span class="eyebrow">A solução Digital</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl leading-tight">
+        Uma página simples. <br /><span class="gradient-text">Um sistema de geração de clientes.</span>
+      </h2>
+      <p class="mt-5 text-white/70 text-lg">
+        Nós não fazemos “sites bonitos”. Criamos uma <strong class="text-white">máquina de transformar curiosos em conversas</strong> no seu WhatsApp — com copywriting profissional, design estratégico e CTAs pensados para fechar.
+      </p>
+      <div class="mt-8 space-y-4">
+        <div class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center font-bold">1</div>
+          <div>
+            <h4 class="font-semibold">Página persuasiva e rápida</h4>
+            <p class="text-white/60 text-sm">Carrega em segundos, funciona perfeitamente no celular e foi desenhada para levar o visitante ao botão.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center font-bold">2</div>
+          <div>
+            <h4 class="font-semibold">Texto que vende sozinho</h4>
+            <p class="text-white/60 text-sm">Palavra certa, no lugar certo. Ativa a decisão de contato mesmo quando você não está online.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="w-10 h-10 shrink-0 rounded-xl bg-brand-green/15 text-brand-green flex items-center justify-center font-bold">3</div>
+          <div>
+            <h4 class="font-semibold">WhatsApp em todo lugar</h4>
+            <p class="text-white/60 text-sm">Botão verde em cada seção — o cliente nunca fica a mais de um toque do “quero contratar”.</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/5531999963861?text=Quero%20meu%20sistema%20de%20clientes%20no%20WhatsApp."
+         data-lead-intent="Quero o sistema agora — geração de clientes no WhatsApp"
+         class="btn-wa js-open-lead mt-10 inline-flex items-center gap-2 font-bold px-6 py-4 rounded-2xl">
+        Quero o sistema agora →
+      </a>
+    </div>
+
+    <div class="card p-6 md:p-8">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-brand-green/20 flex items-center justify-center text-brand-green">📱</div>
+        <div>
+          <div class="text-sm text-white/60">Antes × Depois</div>
+          <div class="font-semibold">Um cenário real de cliente</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="rounded-xl border border-white/10 p-4 bg-white/[0.02]">
+          <div class="text-xs text-white/50">Antes</div>
+          <div class="mt-2 text-3xl font-extrabold">8</div>
+          <div class="text-xs text-white/60">contatos no mês</div>
+          <div class="mt-3 h-1 bg-white/5 rounded-full"><div class="h-1 rounded-full bg-white/30" style="width:15%"></div></div>
+        </div>
+        <div class="rounded-xl border border-brand-green/30 p-4 bg-brand-green/5">
+          <div class="text-xs text-brand-green">Depois (60 dias)</div>
+          <div class="mt-2 text-3xl font-extrabold text-brand-green">73</div>
+          <div class="text-xs text-white/70">contatos no mês</div>
+          <div class="mt-3 h-1 bg-white/5 rounded-full"><div class="h-1 rounded-full bg-brand-green" style="width:95%"></div></div>
+        </div>
+      </div>
+      <p class="text-xs text-white/50 mt-4">*Média aferida em clínicas atendidas entre 2024 e 2025.</p>
+
+      <div class="mt-6 space-y-2">
+        <div class="flex items-center justify-between text-sm"><span class="text-white/70">Taxa de conversão</span><span class="font-bold">12,4%</span></div>
+        <div class="flex items-center justify-between text-sm"><span class="text-white/70">Tempo até o 1º lead</span><span class="font-bold">&lt; 48h</span></div>
+        <div class="flex items-center justify-between text-sm"><span class="text-white/70">Custo por contato</span><span class="font-bold">R$ 0,00 orgânico</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- BENEFÍCIOS -->
-<section class="beneficios" id="beneficios">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">Por que escolher</span>
-      <h2>Qualidade que você <span>sente na primeira gota</span></h2>
-      <p>Somos referência em Varginha porque unimos natureza, tecnologia e cuidado em cada etapa da produção.</p>
+<section class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="eyebrow">Benefícios diretos</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">O que muda no seu bolso e na sua agenda</h2>
+      <p class="mt-4 text-white/70">Não é sobre “ter um site”. É sobre ter mais clientes, mais previsibilidade e menos dor de cabeça.</p>
     </div>
-    <div class="beneficios-grid">
-      <div class="beneficio-card fade-in">
-        <div class="beneficio-icon"><i class="fas fa-mountain"></i></div>
-        <h3>Direto da Fonte</h3>
-        <p>Nossa água vem de fontes naturais protegidas em área rural, mantendo sua pureza original.</p>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green text-xl flex items-center justify-center">💬</div>
+        <h3 class="mt-4 font-bold text-lg">Mais contatos no WhatsApp</h3>
+        <p class="mt-2 text-white/60 text-sm">Visitantes viram conversas. Conversas viram agendamentos. Agendamentos viram faturamento.</p>
       </div>
-      <div class="beneficio-card fade-in">
-        <div class="beneficio-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>Qualidade Garantida</h3>
-        <p>Processo de engarrafamento controlado e seguindo todas as normas sanitárias vigentes.</p>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green text-xl flex items-center justify-center">📅</div>
+        <h3 class="mt-4 font-bold text-lg">Agenda mais cheia</h3>
+        <p class="mt-2 text-white/60 text-sm">Previsibilidade de atendimentos toda semana — sem depender de “milagre” de indicação.</p>
       </div>
-      <div class="beneficio-card fade-in">
-        <div class="beneficio-icon"><i class="fas fa-truck-fast"></i></div>
-        <h3>Entrega Rápida</h3>
-        <p>Entregamos no mesmo dia em Varginha e região. Peça pela manhã, receba à tarde.</p>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green text-xl flex items-center justify-center">⚡</div>
+        <h3 class="mt-4 font-bold text-lg">Pronto em até 5 dias</h3>
+        <p class="mt-2 text-white/60 text-sm">Você nos passa o seu serviço, nós cuidamos do resto. Rápido, sem reuniões intermináveis.</p>
       </div>
-      <div class="beneficio-card fade-in">
-        <div class="beneficio-icon"><i class="fas fa-heart"></i></div>
-        <h3>Saúde em 1º Lugar</h3>
-        <p>Água mineral com sais naturais que contribuem para o bem-estar da sua família.</p>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green text-xl flex items-center justify-center">🏆</div>
+        <h3 class="mt-4 font-bold text-lg">Autoridade instantânea</h3>
+        <p class="mt-2 text-white/60 text-sm">Uma página profissional passa confiança — o cliente decide por você antes mesmo da primeira conversa.</p>
       </div>
-      <div class="beneficio-card fade-in">
-        <div class="beneficio-icon"><i class="fas fa-handshake"></i></div>
-        <h3>Confiança Local</h3>
-        <p>Empresa tradicional de Varginha, atendendo famílias e empresas há mais de duas décadas.</p>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green text-xl flex items-center justify-center">📱</div>
+        <h3 class="mt-4 font-bold text-lg">Funciona em qualquer celular</h3>
+        <p class="mt-2 text-white/60 text-sm">Design mobile-first. 90% dos seus clientes vão abrir pelo celular — e vai carregar em 2 segundos.</p>
+      </div>
+      <div class="card card-hover p-6">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green text-xl flex items-center justify-center">🔒</div>
+        <h3 class="mt-4 font-bold text-lg">Sem depender de anúncios</h3>
+        <p class="mt-2 text-white/60 text-sm">Estrutura otimizada para Google e redes. Resultado que continua mesmo se você pausar tudo.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="container">
-    <div class="sobre-grid">
-      <div class="sobre-image fade-in">
-        <div class="sobre-badge">
-          <i class="fas fa-leaf"></i>
-          <div>
-            <strong>Fazenda Sete Capotes</strong>
-            <span>Fonte protegida em zona rural de Varginha/MG</span>
-          </div>
-        </div>
+<!-- NÚMEROS / PROVA SOCIAL -->
+<section id="resultados" class="py-20 md:py-28 bg-gradient-to-b from-black/30 to-transparent border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="eyebrow">Prova social</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">Números que falam mais do que promessa</h2>
+    </div>
+
+    <!-- CENSURADO: remover a classe "censored" quando os dados reais estiverem prontos -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 censored">
+      <div class="text-center">
+        <div class="number-big">+120</div>
+        <div class="mt-2 text-white/60 text-sm">Negócios atendidos</div>
       </div>
-      <div class="sobre-texto fade-in">
-        <span class="section-tag">Nossa História</span>
-        <h2>Uma tradição de <span>pureza mineira</span></h2>
-        <p>A <strong>Água Mineral Varginha</strong> nasceu do compromisso de levar água pura e de qualidade para famílias e empresas da nossa cidade. Localizada na tranquila Fazenda Sete Capotes, em zona rural preservada, nossa fonte é protegida pelo ambiente natural que a cerca.</p>
-        <p>Cada garrafa, galão e fardo que sai da nossa fábrica carrega a pureza das terras mineiras e o cuidado de quem entende que água é vida — e qualidade não é opcional.</p>
-        <ul class="sobre-lista">
-          <li><i class="fas fa-check"></i><div><strong>Fonte natural protegida</strong> em ambiente rural de Varginha/MG</div></li>
-          <li><i class="fas fa-check"></i><div><strong>Processo controlado</strong> do engarrafamento à entrega</div></li>
-          <li><i class="fas fa-check"></i><div><strong>Atendimento personalizado</strong> para residências e empresas</div></li>
-          <li><i class="fas fa-check"></i><div><strong>Compromisso com a comunidade</strong> de Varginha e região</div></li>
-        </ul>
-        <a href="https://wa.me/5535988686022?text=Olá!%20Quero%20conhecer%20mais%20sobre%20a%20empresa." target="_blank" class="btn btn-primary">
-          <i class="fab fa-whatsapp"></i> Fale Conosco
+      <div class="text-center">
+        <div class="number-big">+R$ 4M</div>
+        <div class="mt-2 text-white/60 text-sm">Gerados aos clientes</div>
+      </div>
+      <div class="text-center">
+        <div class="number-big">12,4%</div>
+        <div class="mt-2 text-white/60 text-sm">Taxa média de conversão</div>
+      </div>
+      <div class="text-center">
+        <div class="number-big">4.9★</div>
+        <div class="mt-2 text-white/60 text-sm">Satisfação média</div>
+      </div>
+    </div>
+
+    <!-- Depoimentos — CENSURADO: remover a classe "censored" quando forem reais -->
+    <div class="mt-14 grid md:grid-cols-3 gap-5 censored">
+      <figure class="card p-6">
+        <div class="flex items-center gap-1 text-brand-green">★★★★★</div>
+        <blockquote class="mt-3 text-white/80">“Em 3 semanas minha agenda lotou. Parei de depender de indicação e agora tenho até fila de espera. Melhor investimento do consultório.”</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600"></div>
+          <div>
+            <div class="font-semibold">Dra. Marina S.</div>
+            <div class="text-xs text-white/50">Dermatologista — BH</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="card p-6">
+        <div class="flex items-center gap-1 text-brand-green">★★★★★</div>
+        <blockquote class="mt-3 text-white/80">“Eu gastava com anúncio e vinha curioso. Depois da Digital, começou a chegar cliente qualificado, pronto para agendar. Mudou o jogo.”</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600"></div>
+          <div>
+            <div class="font-semibold">Ricardo P.</div>
+            <div class="text-xs text-white/50">Clínica de Estética</div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="card p-6">
+        <div class="flex items-center gap-1 text-brand-green">★★★★★</div>
+        <blockquote class="mt-3 text-white/80">“Página pronta em 4 dias, começaram a chegar mensagens no WhatsApp logo na primeira semana. Nunca mais fico sem saber de onde vem cliente novo.”</blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-fuchsia-400 to-purple-600"></div>
+          <div>
+            <div class="font-semibold">Dr. Henrique L.</div>
+            <div class="text-xs text-white/50">Odontologia</div>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">Em 3 passos você já tem sua máquina de clientes rodando</h2>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="card p-7 relative overflow-hidden">
+        <div class="absolute top-4 right-5 text-6xl font-extrabold text-white/5">01</div>
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green font-bold flex items-center justify-center">01</div>
+        <h3 class="mt-5 font-bold text-xl">Conversa rápida</h3>
+        <p class="mt-2 text-white/60 text-sm">Entendemos seu serviço, público e diferenciais em uma conversa de 15 minutos no WhatsApp.</p>
+      </div>
+      <div class="card p-7 relative overflow-hidden">
+        <div class="absolute top-4 right-5 text-6xl font-extrabold text-white/5">02</div>
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green font-bold flex items-center justify-center">02</div>
+        <h3 class="mt-5 font-bold text-xl">Nós criamos tudo</h3>
+        <p class="mt-2 text-white/60 text-sm">Copy, design, estrutura, formulários, WhatsApp integrado. Você só aprova — sem dor de cabeça técnica.</p>
+      </div>
+      <div class="card p-7 relative overflow-hidden">
+        <div class="absolute top-4 right-5 text-6xl font-extrabold text-white/5">03</div>
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/15 text-brand-green font-bold flex items-center justify-center">03</div>
+        <h3 class="mt-5 font-bold text-xl">Clientes chegando</h3>
+        <p class="mt-2 text-white/60 text-sm">Página publicada, link pronto pra divulgar. O celular começa a vibrar com os primeiros contatos.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="https://wa.me/5531999963861?text=Quero%20come%C3%A7ar%20o%20projeto%20agora."
+         data-lead-intent="Começar meu projeto agora"
+         class="btn-wa js-open-lead inline-flex items-center gap-2 font-bold px-6 py-4 rounded-2xl">
+        Começar meu projeto agora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDADE -->
+<section class="py-20 md:py-28 bg-gradient-to-b from-transparent to-black/30 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="eyebrow">Autoridade</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">Por trás da Digital: estratégia, não modinha.</h2>
+      <p class="mt-5 text-white/70 text-lg">
+        Somos um time obcecado por conversão. Enquanto outros ficam brincando de “fazer site”, nós estudamos <strong class="text-white">neurociência do consumo, copywriting de alta performance e comportamento mobile</strong> — e aplicamos isso em cada projeto entregue.
+      </p>
+      <ul class="mt-6 space-y-3 text-white/80">
+        <li class="flex gap-3"><span class="text-brand-green">✓</span> <span class="censor-inline">Metodologia própria validada em mais de 120 negócios</span></li>
+        <li class="flex gap-3"><span class="text-brand-green">✓</span> Especialistas em clínicas, estética, saúde e serviços locais</li>
+        <li class="flex gap-3"><span class="text-brand-green">✓</span> Foco obsessivo em um único KPI: <strong class="text-white">clientes no seu WhatsApp</strong></li>
+      </ul>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="card p-5">
+        <div class="text-xs text-white/50">Segmento</div>
+        <div class="mt-1 font-semibold">Clínicas & Saúde</div>
+        <div class="mt-3 text-2xl font-extrabold text-brand-green">+410%</div>
+        <div class="text-xs text-white/60">contatos em 90 dias</div>
+      </div>
+      <div class="card p-5">
+        <div class="text-xs text-white/50">Segmento</div>
+        <div class="mt-1 font-semibold">Estética & Beleza</div>
+        <div class="mt-3 text-2xl font-extrabold text-brand-green">+287%</div>
+        <div class="text-xs text-white/60">agendamentos/mês</div>
+      </div>
+      <div class="card p-5">
+        <div class="text-xs text-white/50">Segmento</div>
+        <div class="mt-1 font-semibold">Advocacia</div>
+        <div class="mt-3 text-2xl font-extrabold text-brand-green">+193%</div>
+        <div class="text-xs text-white/60">leads qualificados</div>
+      </div>
+      <div class="card p-5">
+        <div class="text-xs text-white/50">Segmento</div>
+        <div class="mt-1 font-semibold">Serviços Locais</div>
+        <div class="mt-3 text-2xl font-extrabold text-brand-green">+342%</div>
+        <div class="text-xs text-white/60">contatos via WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA IRRESISTÍVEL -->
+<section id="oferta" class="py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="ring-offer rounded-3xl p-8 md:p-12 relative overflow-hidden">
+      <div class="absolute top-6 right-6 hidden md:block">
+        <span class="inline-flex items-center gap-2 text-xs font-bold bg-brand-green text-black px-3 py-1.5 rounded-full">
+          <span class="w-2 h-2 bg-black rounded-full animate-ping"></span> OFERTA ATIVA ESTA SEMANA
+        </span>
+      </div>
+
+      <span class="eyebrow">Oferta especial</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">
+        Sua landing page de alta conversão <span class="gradient-text">entregue em até 5 dias</span>.
+      </h2>
+      <p class="mt-4 text-white/70 text-lg">Tudo pronto para começar a gerar clientes. Sem burocracia, sem contratos longos, sem surpresas.</p>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-4">
+        <div class="card p-5 flex items-start gap-3"><span class="text-brand-green">✓</span><span>Landing page profissional 100% focada em conversão</span></div>
+        <div class="card p-5 flex items-start gap-3"><span class="text-brand-green">✓</span><span>Copy persuasiva escrita por especialistas</span></div>
+        <div class="card p-5 flex items-start gap-3"><span class="text-brand-green">✓</span><span>Design exclusivo — nada de template pronto</span></div>
+        <div class="card p-5 flex items-start gap-3"><span class="text-brand-green">✓</span><span>Integração direta com seu WhatsApp</span></div>
+        <div class="card p-5 flex items-start gap-3"><span class="text-brand-green">✓</span><span>Otimizada para celular e Google (SEO básico)</span></div>
+        <div class="card p-5 flex items-start gap-3"><span class="text-brand-green">✓</span><span>Suporte pós-entrega e ajustes inclusos</span></div>
+      </div>
+
+      <div class="mt-8 p-5 rounded-2xl border border-brand-green/25 bg-brand-green/5 flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+        <div>
+          <div class="text-xs text-brand-green font-semibold uppercase tracking-widest">Bônus exclusivo desta semana</div>
+          <div class="font-bold text-lg mt-1">Consultoria estratégica de lançamento (valor R$ 497) — grátis</div>
+          <div class="text-white/60 text-sm mt-1">Te ajudamos a divulgar sua página corretamente para ter resultado nos primeiros 7 dias.</div>
+        </div>
+        <span class="shrink-0 inline-flex items-center gap-2 text-xs font-semibold text-brand-green border border-brand-green/40 bg-brand-green/10 px-3 py-1.5 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-green"></span> Apenas 3 vagas
+        </span>
+      </div>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <a href="https://wa.me/5531999963861?text=Quero%20garantir%20minha%20vaga%20da%20oferta%20desta%20semana."
+           data-lead-intent="Garantir vaga da oferta desta semana"
+           class="btn-wa js-open-lead inline-flex items-center gap-2 font-bold px-7 py-4 rounded-2xl animate-pulse-green">
+          Garantir minha vaga agora
         </a>
+        <div class="text-sm text-white/60">⚡ Resposta em minutos pelo WhatsApp</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUTOS -->
-<section class="produtos" id="produtos">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">Nossos Produtos</span>
-      <h2>Água pura para <span>cada necessidade</span></h2>
-      <p>Opções ideais para sua casa, escritório ou empresa. Peça agora e receba rapidamente.</p>
+<!-- QUEBRA DE OBJEÇÕES / FAQ -->
+<section class="py-20 md:py-28 border-t border-white/5">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-center">
+      <span class="eyebrow">Antes de decidir</span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl md:text-5xl">Respondendo o que você está pensando agora</h2>
     </div>
-    <div class="produtos-grid">
-      <div class="produto-card fade-in">
-        <div class="produto-img">
-          <span class="produto-badge">Mais Pedido</span>
-          <i class="fas fa-prescription-bottle"></i>
-        </div>
-        <div class="produto-body">
-          <h3>Galão 20 Litros</h3>
-          <p>O favorito das famílias e escritórios. Durável, prático e com água sempre fresca.</p>
-          <ul class="produto-features">
-            <li><i class="fas fa-check-circle"></i> Ideal para consumo diário</li>
-            <li><i class="fas fa-check-circle"></i> Entrega e troca de galão</li>
-            <li><i class="fas fa-check-circle"></i> Lacre de segurança</li>
-          </ul>
-          <a href="https://wa.me/5535988686022?text=Olá!%20Quero%20pedir%20galões%20de%2020%20litros." target="_blank" class="produto-cta">
-            <i class="fab fa-whatsapp"></i> Pedir Agora
-          </a>
-        </div>
-      </div>
-
-      <div class="produto-card fade-in">
-        <div class="produto-img">
-          <span class="produto-badge">Família</span>
-          <i class="fas fa-boxes-stacked"></i>
-        </div>
-        <div class="produto-body">
-          <h3>Fardos de Água</h3>
-          <p>Fardos com garrafas de 500ml, 1,5L e 5L. Perfeitos para eventos, viagens e dia a dia.</p>
-          <ul class="produto-features">
-            <li><i class="fas fa-check-circle"></i> Diversos tamanhos disponíveis</li>
-            <li><i class="fas fa-check-circle"></i> Preço especial por quantidade</li>
-            <li><i class="fas fa-check-circle"></i> Embalagens lacradas</li>
-          </ul>
-          <a href="https://wa.me/5535988686022?text=Olá!%20Quero%20pedir%20fardos%20de%20água." target="_blank" class="produto-cta">
-            <i class="fab fa-whatsapp"></i> Pedir Agora
-          </a>
-        </div>
-      </div>
-
-      <div class="produto-card fade-in">
-        <div class="produto-img">
-          <span class="produto-badge">Empresarial</span>
-          <i class="fas fa-building"></i>
-        </div>
-        <div class="produto-body">
-          <h3>Fornecimento para Empresas</h3>
-          <p>Plano contínuo e personalizado de abastecimento para seu negócio. Preço diferenciado.</p>
-          <ul class="produto-features">
-            <li><i class="fas fa-check-circle"></i> Contratos mensais flexíveis</li>
-            <li><i class="fas fa-check-circle"></i> Atendimento prioritário</li>
-            <li><i class="fas fa-check-circle"></i> Preços especiais B2B</li>
-          </ul>
-          <a href="https://wa.me/5535988686022?text=Olá!%20Quero%20um%20orçamento%20para%20minha%20empresa." target="_blank" class="produto-cta">
-            <i class="fab fa-whatsapp"></i> Solicitar Orçamento
-          </a>
-        </div>
-      </div>
+    <div class="mt-10 space-y-3">
+      <details class="card p-5 group">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold">
+          “Não vai ser caro demais pra mim?”
+          <span class="faq-chevron text-brand-green text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-white/70 text-sm">Nosso objetivo é o projeto se pagar sozinho. Com 1 ou 2 clientes novos, você já recupera o investimento. Trabalhamos com faixas acessíveis e parcelamento facilitado — sem mensalidade obrigatória.</p>
+      </details>
+      <details class="card p-5 group">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold">
+          “E se eu não entender nada de tecnologia?”
+          <span class="faq-chevron text-brand-green text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-white/70 text-sm">Perfeito. Nós cuidamos de tudo: domínio, publicação, textos, design, botões, integração com WhatsApp. Você só aprova e começa a receber os contatos.</p>
+      </details>
+      <details class="card p-5 group">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold">
+          “Quanto tempo até eu ver o primeiro resultado?”
+          <span class="faq-chevron text-brand-green text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-white/70 text-sm">A página fica pronta em até 5 dias úteis. A maioria dos clientes começa a receber mensagens no WhatsApp já na primeira semana de divulgação.</p>
+      </details>
+      <details class="card p-5 group">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold">
+          “Já tentei outras coisas e não funcionou. Por que agora?”
+          <span class="faq-chevron text-brand-green text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-white/70 text-sm">A maioria das tentativas falha porque é site genérico, sem estratégia de conversão. Nossa metodologia foi feita para um único objetivo: levar o visitante direto ao botão do WhatsApp.</p>
+      </details>
+      <details class="card p-5 group">
+        <summary class="flex items-center justify-between cursor-pointer font-semibold">
+          “E se eu não gostar do resultado?”
+          <span class="faq-chevron text-brand-green text-2xl leading-none">+</span>
+        </summary>
+        <p class="mt-3 text-white/70 text-sm">Fazemos ajustes sem custo até você aprovar. Nosso jogo é você sair satisfeito — e voltar a indicar a gente.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos" id="depoimentos">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-tag">Depoimentos</span>
-      <h2>O que nossos <span>clientes dizem</span></h2>
-      <p>A confiança conquistada ao longo dos anos é o nosso maior orgulho.</p>
-    </div>
-    <div class="depoimentos-grid">
-      <div class="depo-card fade-in">
-        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="depo-texto">"Peço há mais de 5 anos para minha casa. A água tem um sabor incrível, e a entrega nunca atrasa. Virou parte da rotina da família!"</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">MR</div>
-          <div>
-            <strong>Marcela Ribeiro</strong>
-            <span>Cliente residencial · Varginha</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="depo-card fade-in">
-        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="depo-texto">"Fornecem água para nosso escritório há 3 anos. Atendimento excepcional, preço justo e qualidade que nossos clientes elogiam."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">CT</div>
-          <div>
-            <strong>Carlos Teixeira</strong>
-            <span>Sócio · Escritório Teixeira Advocacia</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="depo-card fade-in">
-        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="depo-texto">"Somos um restaurante e precisávamos de um fornecedor de confiança. A Água Mineral Varginha entrega pontualmente e com qualidade garantida."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">JA</div>
-          <div>
-            <strong>Juliana Andrade</strong>
-            <span>Proprietária · Restaurante Sabor da Serra</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="depo-card fade-in">
-        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="depo-texto">"Atendimento humano, água limpíssima e entrega rápida. Recomendo de olhos fechados para qualquer pessoa em Varginha."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar">RF</div>
-          <div>
-            <strong>Roberto Ferreira</strong>
-            <span>Cliente há 8 anos · Três Corações</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FORTE -->
-<section class="cta-forte">
-  <div class="container fade-in">
-    <div class="urgencia"><span class="pulse"></span> Atendimento rápido — peça agora mesmo</div>
-    <h2>Sua água de qualidade está a um clique de distância</h2>
-    <p>Não perca tempo. Fale conosco no WhatsApp e garanta sua entrega hoje mesmo. Atendimento personalizado para você e sua empresa.</p>
-    <a href="https://wa.me/5535988686022?text=Olá!%20Quero%20fazer%20um%20pedido%20agora." target="_blank" class="btn btn-primary">
-      <i class="fab fa-whatsapp"></i> Pedir no WhatsApp Agora
+<!-- CTA FINAL -->
+<section class="py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <span class="eyebrow"><span class="dot-live"></span> Últimas vagas de Abril</span>
+    <h2 class="mt-6 font-display font-extrabold text-4xl md:text-6xl leading-[1.05]">
+      Todo dia sem sua página pronta <br />é <span class="gradient-text">cliente indo para o concorrente</span>.
+    </h2>
+    <p class="mt-5 text-white/70 text-lg max-w-2xl mx-auto">
+      Enquanto você pensa, alguém busca pelo seu serviço no Google agora. Vai achar você — ou outra pessoa. Decida do lado certo.
+    </p>
+    <a href="https://wa.me/5531999963861?text=Quero%20minha%20landing%20page%20agora!"
+       data-lead-intent="Quero mais clientes agora — CTA final"
+       class="btn-wa js-open-lead mt-10 inline-flex items-center gap-2 font-bold px-8 py-5 rounded-2xl text-lg animate-pulse-green">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
+      Quero mais clientes agora
     </a>
+    <div class="mt-5 text-sm text-white/50">Sem compromisso • Orçamento em minutos • 100% pelo WhatsApp</div>
   </div>
 </section>
 
 <!-- CONTATO -->
-<section class="contato" id="contato">
-  <div class="container">
-    <div class="contato-grid">
-      <div class="contato-info fade-in">
-        <span class="section-tag">Fale Conosco</span>
-        <h2>Estamos prontos para <span>atender você</span></h2>
-        <p>Entre em contato pelos canais abaixo. Atendemos rapidamente via WhatsApp.</p>
+<section id="contato" class="py-16 md:py-20 border-t border-white/5 bg-gradient-to-b from-transparent to-black/40">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="eyebrow">Contato direto</span>
+      <h2 class="mt-4 font-display font-extrabold text-3xl md:text-4xl">Fale com a gente pelo canal que preferir</h2>
+      <p class="mt-3 text-white/60">Resposta rápida de segunda a sábado. Escolha o caminho mais confortável — a gente retorna em minutos.</p>
+    </div>
 
-        <div class="contato-item">
-          <i class="fab fa-whatsapp"></i>
-          <div>
-            <strong>WhatsApp</strong>
-            <a href="https://wa.me/5535988686022?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank">(35) 98868-6022</a>
-          </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <a href="https://wa.me/5531999963861?text=Ol%C3%A1!%20Quero%20mais%20clientes%20no%20meu%20WhatsApp."
+         class="card card-hover p-6 flex items-center gap-4 group">
+        <div class="w-14 h-14 rounded-2xl bg-brand-green/15 text-brand-green flex items-center justify-center">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/></svg>
         </div>
-
-        <div class="contato-item">
-          <i class="fas fa-phone"></i>
-          <div>
-            <strong>Telefone Fixo</strong>
-            <a href="tel:+553532141736">(35) 3214-1736</a>
-          </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-widest text-white/40">WhatsApp (mais rápido)</div>
+          <div class="mt-1 text-lg font-bold">(31) 9 9996-3861</div>
+          <div class="text-xs text-white/50 mt-1 group-hover:text-brand-green">Tocar para abrir conversa →</div>
         </div>
-
-        <div class="contato-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <div>
-            <strong>Endereço</strong>
-            <p>Fazenda Sete Capotes, S/N<br>Zona Rural, Varginha/MG</p>
-          </div>
+      </a>
+      <button type="button" id="copyEmailBtn" data-email="orcamentos.agenciadigital@gmail.com"
+         class="card card-hover p-6 flex items-center gap-4 group text-left w-full">
+        <div class="w-14 h-14 rounded-2xl bg-white/5 text-white flex items-center justify-center border border-white/10 shrink-0">
+          <svg class="w-7 h-7 icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
+          <svg class="w-7 h-7 icon-check hidden text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
         </div>
-
-        <div class="contato-item">
-          <i class="fas fa-clock"></i>
-          <div>
-            <strong>Horário de Funcionamento</strong>
-            <p>Segunda a Quinta: 07h30 às 17h00<br>Sexta: 07h30 às 16h00</p>
-          </div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs uppercase tracking-widest text-white/40">E-mail</div>
+          <div class="mt-1 text-base font-semibold truncate email-text">orcamentos.agenciadigital@gmail.com</div>
+          <div class="text-xs text-white/50 mt-1 group-hover:text-brand-green copy-hint">Clique para copiar →</div>
         </div>
-      </div>
-
-      <div class="mapa fade-in">
-        <iframe
-          src="https://www.google.com/maps?q=Fazenda+Sete+Capotes+Varginha+MG&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Mapa Água Mineral Varginha">
-        </iframe>
-      </div>
+      </button>
+      <a href="https://instagram.com/agenciadigital.br" target="_blank" rel="noopener"
+         class="card card-hover p-6 flex items-center gap-4 group">
+        <div class="w-14 h-14 rounded-2xl bg-white/5 text-white flex items-center justify-center border border-white/10">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </div>
+        <div class="flex-1">
+          <div class="text-xs uppercase tracking-widest text-white/40">Instagram</div>
+          <div class="mt-1 text-lg font-bold">@agenciadigital.br</div>
+          <div class="text-xs text-white/50 mt-1 group-hover:text-brand-green">Ver portfólio →</div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- RODAPÉ -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">
-          <img src="https://aguamineralvarginha.com.br/wp-content/uploads/2020/04/13.-logo_amv_original.png" alt="Logo">
-          <strong>Água Mineral<br>Varginha</strong>
-        </div>
-        <p>Pureza direto da fonte, tradição e qualidade para famílias e empresas de Varginha e região.</p>
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-12 bg-black/40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-3 gap-8 items-start">
+    <div>
+      <div class="flex items-center gap-3">
+        <img src="first_logo.jpg" alt="Digital" class="w-10 h-10 rounded-xl object-cover ring-1 ring-white/10" />
+        <span class="font-display font-extrabold text-lg">Digital<span class="text-brand-green">.</span></span>
       </div>
-      <div>
-        <h4>Navegação</h4>
-        <ul>
-          <li><a href="#beneficios">Benefícios</a></li>
-          <li><a href="#sobre">Sobre Nós</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul>
-          <li><a href="https://wa.me/5535988686022" target="_blank"><i class="fab fa-whatsapp"></i> (35) 98868-6022</a></li>
-          <li><a href="tel:+553532141736"><i class="fas fa-phone"></i> (35) 3214-1736</a></li>
-          <li><i class="fas fa-map-marker-alt"></i> Fazenda Sete Capotes, Varginha/MG</li>
-          <li><i class="fas fa-clock"></i> Seg-Qui 07h30-17h | Sex 07h30-16h</li>
-        </ul>
-      </div>
+      <p class="mt-3 text-white/50 text-sm max-w-sm">Landing pages que transformam visitantes em clientes reais no seu WhatsApp.</p>
     </div>
-    <div class="footer-bottom">
-      &copy; <span id="year"></span> Água Mineral Varginha. Todos os direitos reservados. · Pureza e qualidade de Varginha para você.
+    <div>
+      <div class="text-xs uppercase tracking-widest text-white/40">Contato</div>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a class="hover:text-brand-green" href="https://wa.me/5531999963861">WhatsApp: (31) 9 9996-3861</a></li>
+        <li><a class="hover:text-brand-green" href="mailto:orcamentos.agenciadigital@gmail.com">orcamentos.agenciadigital@gmail.com</a></li>
+        <li><a class="hover:text-brand-green" href="https://instagram.com/agenciadigital.br" target="_blank" rel="noopener">Instagram: @agenciadigital.br</a></li>
+      </ul>
+    </div>
+    <div class="md:text-right">
+      <a href="https://wa.me/5531999963861?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento."
+         data-lead-intent="Pedir orçamento"
+         class="btn-wa js-open-lead inline-flex items-center gap-2 font-bold px-5 py-3 rounded-xl">
+        Pedir orçamento agora
+      </a>
+      <div class="mt-4 text-xs text-white/40">© <span id="yr"></span> Digital. Todos os direitos reservados.</div>
     </div>
   </div>
 </footer>
 
-<!-- WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5535988686022?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
+<!-- STICKY WHATSAPP -->
+<a href="https://wa.me/5531999963861?text=Ol%C3%A1%2C%20quero%20mais%20clientes%21"
+   class="sticky-wa animate-pulse-green" aria-label="Falar no WhatsApp">
+  <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.52 3.48A11.94 11.94 0 0012.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.58 5.93L0 24l6.38-1.67a11.82 11.82 0 005.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45z"/>
+  </svg>
 </a>
 
+<!-- LEAD MODAL -->
+<div id="leadModal" class="lead-backdrop" role="dialog" aria-modal="true" aria-labelledby="leadTitle" aria-hidden="true">
+  <div class="lead-panel">
+    <button type="button" class="lead-close" aria-label="Fechar" data-lead-close>
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <img src="first_logo.jpg" alt="Digital" class="w-11 h-11 rounded-lg object-cover ring-1 ring-white/10" />
+        <span class="font-display font-extrabold text-lg tracking-tight">Digital<span class="text-brand-green">.</span></span>
+      </div>
+      <h3 id="leadTitle" class="font-display font-bold text-2xl leading-tight text-white">
+        Vamos criar algo incrível juntos!
+      </h3>
+      <p class="mt-2 text-sm text-white/60">
+        Assim que você preencher o formulário, você será redirecionado automaticamente para o nosso WhatsApp.
+      </p>
+
+      <form id="leadForm" class="mt-7 space-y-4" novalidate>
+        <div class="lead-field">
+          <input id="leadName" name="name" class="lead-input" type="text" placeholder="Seu nome / empresa" autocomplete="name" required />
+          <div class="lead-error">Por favor, preencha seu nome ou empresa.</div>
+        </div>
+
+        <div class="lead-field">
+          <input id="leadEmail" name="email" class="lead-input" type="email" placeholder="E-mail de contato" autocomplete="email" required />
+          <div class="lead-error">Informe um e-mail válido.</div>
+        </div>
+
+        <div class="lead-field">
+          <label class="lead-label" for="leadPhone">WhatsApp de contato</label>
+          <div class="lead-phone-wrap">
+            <span class="lead-phone-prefix">+55</span>
+            <input id="leadPhone" name="phone" class="lead-input" type="tel" inputmode="numeric" placeholder="(31) 9 9999-9999" autocomplete="tel-national" required />
+          </div>
+          <div class="lead-error">Informe um WhatsApp válido (DDD + número).</div>
+        </div>
+
+        <button type="submit" class="btn-wa w-full inline-flex items-center justify-center gap-2 font-semibold px-6 py-4 rounded-lg text-base mt-5">
+          Enviar e Avançar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-24 right-6 z-[60] translate-y-4 opacity-0 pointer-events-none transition-all duration-300 bg-brand-green text-black font-semibold text-sm px-4 py-3 rounded-xl shadow-glow flex items-center gap-2">
+  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+  <span id="toastMsg">E-mail copiado!</span>
+</div>
+
 <script>
-  // Header scroll
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  });
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Mobile menu
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
-  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navMenu.classList.remove('active')));
+  /* THEME TOGGLE */
+  (function() {
+    const KEY = 'digital-theme';
+    const body = document.body;
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
 
-  // Fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    function apply(theme) {
+      if (theme === 'light') body.classList.add('theme-light');
+      else body.classList.remove('theme-light');
+      btn.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+    }
+
+    let saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    apply(saved === 'light' ? 'light' : 'dark');
+
+    btn.addEventListener('click', () => {
+      const next = body.classList.contains('theme-light') ? 'dark' : 'light';
+      apply(next);
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+    });
+  })();
+
+  (function() {
+    const btn = document.getElementById('copyEmailBtn');
+    if (!btn) return;
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    const iconMail = btn.querySelector('.icon-mail');
+    const iconCheck = btn.querySelector('.icon-check');
+    const hint = btn.querySelector('.copy-hint');
+    const originalHint = hint.textContent;
+
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-4', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2200);
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      let ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    btn.addEventListener('click', async () => {
+      const email = btn.dataset.email;
+      let copied = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(email);
+          copied = true;
+        } else {
+          copied = fallbackCopy(email);
+        }
+      } catch (e) {
+        copied = fallbackCopy(email);
+      }
+
+      if (copied) {
+        iconMail.classList.add('hidden');
+        iconCheck.classList.remove('hidden');
+        hint.textContent = 'Copiado! Cole no seu e-mail.';
+        hint.classList.add('text-brand-green');
+        showToast('E-mail copiado!');
+        setTimeout(() => {
+          iconMail.classList.remove('hidden');
+          iconCheck.classList.add('hidden');
+          hint.textContent = originalHint;
+          hint.classList.remove('text-brand-green');
+        }, 2200);
+      } else {
+        showToast('Não foi possível copiar. Selecione manualmente.');
       }
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  })();
 
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  /* LEAD MODAL */
+  (function() {
+    const WA_NUMBER = '5531999963861';
+    const modal = document.getElementById('leadModal');
+    const form = document.getElementById('leadForm');
+    if (!modal || !form) return;
+
+    const nameInput = document.getElementById('leadName');
+    const emailInput = document.getElementById('leadEmail');
+    const phoneInput = document.getElementById('leadPhone');
+    let currentIntent = '';
+    let lastFocused = null;
+
+    function openModal(intent) {
+      currentIntent = intent || '';
+      lastFocused = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      setTimeout(() => nameInput.focus(), 200);
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      clearErrors();
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function clearErrors() {
+      form.querySelectorAll('.lead-field.has-error').forEach(el => el.classList.remove('has-error'));
+    }
+
+    function markError(input) {
+      const field = input.closest('.lead-field');
+      if (field) field.classList.add('has-error');
+    }
+
+    function validEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+    }
+
+    function digitsOnly(v) { return (v || '').replace(/\D+/g, ''); }
+
+    function formatPhone(digits) {
+      // BR: DDD + 9 digits (celular) or DDD + 8 (fixo)
+      const d = digits.slice(0, 11);
+      if (d.length <= 2) return d.length ? '(' + d : '';
+      if (d.length <= 7) return '(' + d.slice(0,2) + ') ' + d.slice(2);
+      if (d.length <= 10) return '(' + d.slice(0,2) + ') ' + d.slice(2, d.length-4) + '-' + d.slice(d.length-4);
+      return '(' + d.slice(0,2) + ') ' + d.slice(2,3) + ' ' + d.slice(3,7) + '-' + d.slice(7,11);
+    }
+
+    phoneInput.addEventListener('input', (e) => {
+      const d = digitsOnly(e.target.value);
+      e.target.value = formatPhone(d);
+    });
+
+    // Open modal on CTA clicks
+    document.querySelectorAll('.js-open-lead').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const intent = el.getAttribute('data-lead-intent') || el.textContent.trim();
+        openModal(intent);
+      });
+    });
+
+    // Close handlers
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.closest('[data-lead-close]')) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+
+    // Submit handler
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const phoneDigits = digitsOnly(phoneInput.value);
+
+      let ok = true;
+      if (!name) { markError(nameInput); ok = false; }
+      if (!validEmail(email)) { markError(emailInput); ok = false; }
+      if (phoneDigits.length < 10 || phoneDigits.length > 11) { markError(phoneInput); ok = false; }
+      if (!ok) return;
+
+      const prettyPhone = '+55 ' + formatPhone(phoneDigits);
+      const lines = [
+        'Olá! Quero saber mais sobre a landing page da Digital.',
+        '',
+        '• Nome/Empresa: ' + name,
+        '• E-mail: ' + email,
+        '• WhatsApp: ' + prettyPhone,
+      ];
+      if (currentIntent) lines.push('• Interesse: ' + currentIntent);
+
+      const msg = encodeURIComponent(lines.join('\n'));
+      const url = 'https://wa.me/' + WA_NUMBER + '?text=' + msg;
+
+      closeModal();
+      form.reset();
+      window.open(url, '_blank', 'noopener');
+    });
+  })();
 </script>
 
 </body>
